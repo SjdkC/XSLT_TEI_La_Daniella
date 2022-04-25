@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+   xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:lang="en">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Documentation - Encodage du premier épisode du roman feuilleton <emph rend="italic">La Daniella</emph>. George Sand, 1857.</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Encodage réalisé par <persName><forename>Cécile</forename> <surname>Sajdak</surname></persName> dans le cadre du contrôle terminal du cours de XML TEI du Master TNAH.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Schéma créé à l'aide de ODD by Example.</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         
+         <div1>
+            
+            <head>Documentation sur l'encodage du premier épisode du roman-feuilleton <emph rend="italic">La Daniella</emph> écrit par <persName>George Sand</persName> et paru dans le journal <emph rend="italic">La Presse</emph> le 6 janvier 1857.</head>
+            
+            <p>Cette documentation présente d'abord succintement le projet scientifique derrière cette édition encodée, de même que les réutilisations qui pourraient en être faite. Dans un second temps, cette documentation explicite les choix d'encodage qui ont guidé le projet, en faisant le lien avec les objectifs scientifiques qui ont motivé ces choix.</p>
+            
+           <div2> 
+              <head>Encoder un roman feuilleton : intérêt scientifique et réutilisation</head>
+
+              <p>Cette édition électronique encodée a pour but de faciliter l'étude de sa source, c'est-à-dire le feuilleton <emph rend="italic">La Daniella</emph> de <persName>George Sand</persName> paru en 1857 dans le journal <emph rend="italic">La Presse</emph>. </p>    
+              <p>Ce schéma vise à s'appliquer à des œuvres littéraires, en particulier à des romans-feuilletons, et tout particulièrement au roman-feuilleton <emph rend="italic">La Daniella</emph>.</p>
+              <p>Le premier objectif de cette édition est d'établir une édition proprement transcrite, dotée de métadonnées précises (voir le <gi>teiHeader</gi>), afin de faciliter l'exploitation du texte. Cette édition pourra faire l'objet d'une transformation HTML, à l'aide d'une feuille XSLT par exemple, dans le but de produire une visualisation. L'édition pourrait ensuite être mise en ligne.</p>
+              <p>Le second objectif de cette édition électronique est de rendre compte de la structure du roman-feuilleton et, par la même, de le rendre plus facilement accessible et compréhensible.</p>
+              <p>Un autre objectif est de faciliter l'étude des personnages de l'œuvre : liens entre personnages, nombre d'occurrences, données statistiques... L'encodage a également pour but de faciliter l'étude du cadre de l'histoire, à travers l'indexation des lieux. Pour faciliter ce travail, ce schéma propose un certain degré de normalisation des données, notamment en ce qui concerne l'indexation et le relevé des occurrences des personnages et des lieux.</p>
+              <p>Enfin, ce schéma se veut applicables à d'autres œuvres littéraires, en particulier des romans-feuilletons, afin de permettre des études croisées et des comparaisons.</p>
+              <p>Dans la partie suivante, les différents aspects de ces objectifs scientifiques seront développés en lien avec les choix d'encodage qui ont été faits.</p>
+           </div2>
+          
+    
+          <div2>
+               <head>Structure du fichier XML</head>
+             
+             <p>Les choix d'encodage qui ont été faits se veulent conformes au schéma TEI : le schéma a été restreint uniquement, et non augmenté.</p>
+             <p>Il ne s'agira pas ici de présenter en détail l'ensemble des éléments retenus pour l'encodage, mais bien de proposer un guide visant à faciliter la compréhension de l'encodage et à expliciter les choix qui ont été faits en fonction des objectifs scientifiques visés. Pour plus d'informations sur le détail des balises, se référer aux <ref target="https://tei-c.org/">TEI Guidelines</ref>.</p>      
+             
+             <p>Le document contient un élément racine <gi>TEI</gi>, contenant un élément <gi>teiHeader</gi> et un élément <gi>text</gi>.</p>
+
+             <div3>
+                <head>L'élément <gi>teiHeader</gi></head>
+                <p>L'élément <gi>teiHeader</gi> contient des métadonnées liées au document. Il est constitué d'un élément <gi>fileDesc</gi>, d'un élément <gi>encodingDesc</gi> et d'un élément <gi>profileDesc</gi>.</p>
+                
+                <div4>
+                   <head>L'élément <gi>fileDesc</gi></head>
+                   <p>L'élément <gi>fileDesc</gi> comprend des métadonnées bibliographiques concernant le fichier encodé. Il se compose de plusieurs éléments : <gi>titleStmt</gi>, <gi>extent</gi>, <gi>publicationStmt</gi> et <gi>sourceDesc</gi></p>
+                   
+                   <div5>
+                      <head>L'élément <gi>titleStmt</gi></head>
+                      <p>Cet élément contient des métadonnées propres au fichier encodé lui-même, en particulier son titre et les personnes qui en ont la responsabilité intellectuelle. L'élément <gi>title</gi> contient le titre du fichier.</p>
+                      <p>Il est suivi d'un élément <gi>respStmt</gi>, qui contient des informations qui établissent la responsabilité intellectuelle du projet. Pour chaque domaine de responsabilité, il contient un élément <gi>resp</gi> qui précise la nature de la responsabilité intellectuelle de la personne concernée.</p>
+                      <p>Cet élément est suivi d'un élément <gi>persName</gi> servant à identifier cette personne. Pour ce faire, cet élément est porteur d'un attribut <att>xml:id</att> dont la valeur est un identifiant unique. Il comprend également un élément <gi>forename</gi> et un élément <gi>surname</gi>, qui contiennent respectivement le prénom et le nom de famille de la personne concernée. Ainsi, par exemple :</p>
+                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                         <titleStmt>
+                            <title>La Daniella - Édition encodée du premier chapitre du roman feuilleton</title>
+                            <respStmt>
+                               <resp>Encodage réalisé par</resp>
+                               <persName xml:id="Cecile_Sajdak">
+                                  <forename>Cécile</forename>
+                                  <surname>Sajdak</surname>
+                               </persName>
+                            </respStmt>
+                         </titleStmt>
+                         <!-- Suite du fileDesc-->
+                      </egXML>                     
+                   </div5>
+                   
+                   <div5>
+                      <head>L'élément <gi>extent</gi></head>
+                      <p>Cet élément contient le poids approximatif du fichier électronique. Cette donnée vise à faciliter le transfert ou la conservation du fichier.</p>
+                   </div5>
+                   
+                   <div5>
+                      <head>L'élément <gi>publicationStmt</gi></head>
+                      <p>Cet élément vise à présenter les informations relatives à la publication du fichier. Compte tenu de la portée de l'exercice (l'édition n'a pas vocation à être publiée), ce schéma recommande l'utilisation d'une structuration minimale à l'aide d'éléments <gi>p</gi> contenant du texte libre.</p>
+                   </div5>
+                   
+                   <div5>
+                      <head>L'élément <gi>sourceDesc</gi></head>
+                      <p>Cet élément vise à présenter la source qui a servi de base à l'encodage. Pour assurer un certain niveau de détail et de structuration dans la description de cette source, ce schéma prescrit l'utilisation d'un élément <gi>biblFull</gi> au sein du <gi>sourceDesc</gi>.</p>
+                      <p>L'élément <gi>biblFull</gi> comprend les éléments suivants : <gi>titleStmt</gi>, <gi>publicationStmt</gi>, <gi>seriesStmt</gi>.</p>
+                      
+                      <div6>
+                         <head>L'élément <gi>titleStmt</gi></head>
+                         <p>Ici aussi, cet élément vise à présenter le titre de l'œuvre et les personnes qui en ont la responsabilité intellectuelle. Il s'agit bien ici de l'œuvre qui a servi de base à l'encodage.</p>
+                         <p>Cet élément comprend un élément <gi>title</gi> contenant le titre de cette œuvre. Il contient également un élément <gi>author</gi> portant un attribut <att>ref</att>. Le contenu de cet attribut doit pointer vers une notice d'autorité permettant d'identifier l'auteur de manière certaine. Par soucis de cohérence, nous recommandons d'utiliser la notice d'autorité utilisée par l'organisation ayant la responsabilité intellectuelle de l'œuvre sur laquelle se base l'encodage. Ainsi, si l'encodage a été réalisé à partir d'une numérisation produite par la <orgName>Bibliothèque nationale de France</orgName>, il serait bienvenu de faire pointer la référence vers une notice d'autorité du catalogue de la <orgName>BnF</orgName>. Pour expliciter plus encore l'identité de l'auteur, l'élément <gi>author</gi> comprend un élément <gi>persName</gi>, qui suit la même structure que l'élément <gi>persName</gi> décrit plus haut.</p>
+                      </div6>
+                      
+                      <div6>
+                         <head>L'élément <gi>publicationStmt</gi></head>
+                         <p>Cet élément présente les métadonnées qui concernent la publication de l'œuvre source. Il comprend un élément <gi>publisher</gi> contenant le nom de l'éditeur (le journal de parution, dans le cas d'un roman feuilleton.</p>
+                         <p>Il comprend également un élément <gi>pubPlace</gi> contenant un élément <gi>address</gi>, qui contient des informations sur le lieu de publication : pays (élément <gi>country</gi> portant un attribut <att>key</att>, afin d'identifier le pays selon la norme <ref target="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes">ISO 3166</ref>) ; installation (élément <gi>settlement</gi> porteur d'un éventuel attribut <att>type</att> permettant de préciser la typologie de l'installation, par exemple <val>city</val>) ; code postal (<gi>postCode</gi>) ; sous-division géographique (<gi>district</gi>, porteur d'un éventuel attribut <att>att</att> permettant de préciser la typologie de la sous-division, par exemple <val>arrondissement</val>) ; rue (<gi>street</gi> contenant un élément <gi>num</gi> qui contient le numéro). Ainsi, par exemple :</p>
+                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <!-- début du publicationStmt-->
+                            <pubPlace>
+                               <address>
+                                  <country key="FR"/>
+                                  <settlement type="city">Paris</settlement>
+                                  <postCode>75002</postCode>
+                                  <district type="arrondissement">2e</district>
+                                  <street>Rue Montmartre, <num>123</num>
+                                  </street>
+                               </address>
+                            </pubPlace>
+                            <!--Suite du ppublicationStmt-->
+                         </egXML>
+                         <p>Il est important de faire figurer l'ensemble de ces éléments quand bien même leur contenu ne pourrait pas être renseigné. En effet, la description des lieux est normalisée à l'échelle du document, afin de permettre plus facilement une éventuelle extraction des informations, et de favoriser l'exploitation de ces dernières. Par conséquent, l'ensemble des sous-éléments présentés pour l'élément <gi>address</gi> est obligatoire.</p>
+                         <p>L'élément <gi>publicationStmt</gi> contient également un élément <gi>date</gi> pour indiquer la date de publication. Cet élément porte un attribut <att>when-iso</att> afin d'indiquer la version normalisée de la date selon la <ref target="https://fr.wikipedia.org/wiki/ISO_8601">norme ISO 8601</ref> (format aaaa-mm-jj). Il contient également un élément <gi>distributor</gi> qui permet de préciser le diffuseur de l'édition. S'il s'agit d'un organisme qui le met en ligne, cet élément peut être porteur d'un attribut <att>facs</att> qui contient un lien vers le fac-similé de l'œuvre. Cette mention a pour but d'expliciter quelle a été la source exacte ayant permis d'établir l'édition encodée, et de faciliter la remontée vers ladite source. Il s'agit aussi d'assurer une transparence scientifique, en permettant par exemple aux personnes consultant l'édition encodée de s'assurer de la bonne transcription et du bon encodage de la source.</p>
+                         <p>L'encodage comportera également un élément <gi>availability</gi> contenant un élément <gi>licence</gi> afin de préciser la licence de la source. Ce dernier élément pourra comporter un attribut <gi>target</gi> renvoyant vers le détail de la licence, dans le but de désambiguïser la mention de licence.</p>
+                      </div6>
+                      
+                      <div6>
+                         <head>L'élément <gi>seriesStmt</gi></head>
+                         <p>Cet élément a pour but de donner des informations sur la série dans laquelle s'inscrit la publication source. Cet élément est particulièrement utile dans le cadre de l'édition d'un roman-feuilleton, puisqu'il permet de préciser quels sont les épisodes du feuilleton qui seront présents dans l'édition. Cet élément comportera des éléments <gi>biblScope</gi> permettant de signifier la portée de l'édition. Ces éléments seront porteurs d'un attribut <gi>unit</gi> dont la valeur correspondra à l'unité concernée : <val>book</val>, <val>episode</val>, <val>chapter</val> ou <val>page</val>. L'encodeur est invité à choisir entre <val>episode</val> et <val>chapter</val> en fonction de la nature de l'œuvre encodée. Pour un roman-feuilleton par exemple, la valeur <val>episode</val> est plus indiquée.</p>
+                      </div6>                      
+                   </div5>                   
+                </div4>
+                
+                <div4>
+                   <head>L'élément <gi>encodingDesc</gi></head>
+                   <p>Cet élément contient des informations sur l'encodage réalisé. Il contient un élément <gi>projectDesc</gi> qui contient un bref résumé du projet à l'origine de l'encodage. Il est suivi de texte libre structuré par des éléments <gi>p</gi>, qui peuvent servir à documenter d'autres aspects des choix d'encodage. Cependant, il n'est pas forcément utile d'entrer dans les détails, puisque l'ODD sert justement à présenter ces choix. Il peut néanmoins être utile de renvoyer le lecteur vers la consultation de la présente ODD.</p>
+                </div4>
+                
+                <div4>
+                   <head>L'élément <gi>profileDesc</gi></head>
+                   <p>Cet élément vise à présenter les aspects non-bibliographiques du texte. Il contient ainsi un élément <gi>creation</gi> qui rassemble des informations sur le contexte de création de l'œuvre : date (élément <gi>date</gi> et son attribut <gi>when-iso</gi>) ; pays (élément <gi>country</gi> et son attribut <att>key</att>), langue (élément <gi>lang</gi> et son attribut <att>xml:lang</att>). Les valeurs d'attributs de <att>when-iso</att> et <att>key</att> suivent les règles énoncées plus haut. Quant à la valeur de <att>xml:lang</att>, elle suit les recommandations des <ref target="https://tei-c.org/">TEI Guidelines</ref>, qui préscrivent de suivre la norme <ref target="https://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>. Ainsi, par exemple :</p>
+                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                      <creation>
+                         <date when-iso="1856">1856</date>
+                         <country key="FR">France</country>
+                         <lang xml:lang="fr"/>
+                      </creation>
+                   </egXML>
+                   <p>Comme nous l'avons dit précédemment, l'un des objectifs de cette édition encodée est de permettre l'étude des personnages et des dynamiques qui existent entre eux, de même que l'étude des lieux et du lien entre les personnages et les lieux. Il est donc primordial de procéder à l'indexation des personnages et des lieux. Pour ce faire, ce schéma préconise la création d'un élément <gi>profileDesc</gi> qui sera inclus dans le <gi>profileDesc</gi>. Cet élément contient un élément <gi>settingDesc</gi> ainsi qu'un élément <gi>particDesc</gi>, qui permettront respectivement l'indexation des lieux et des personnes ou personnages.</p>
+                   
+                   <div5><head>Indexation des lieux : l'élément <gi>settingDesc</gi></head>
+                   <p>Cet élément contient un élément <gi>listPlace</gi> contenant une liste de <gi>place</gi>. L'élément <gi>place</gi> porte un attribut <att>xml:id</att> dont la valeur est un identifiant unique, de même qu'un attribut <att>type</att> dont la valeur est la typologie du lieu. L'élément <gi>place</gi> contiendra un élément <gi>place</gi> dont le contenu entre en conformité avec la standardisation énoncée plus haut. Il est suivi d'un éventuel élément <gi>note</gi> qui peut permettre de donner plus d'informations sur le lieu et de préciser sa place dans l'histoire, le tout en texte libre.</p>
+                      <p>La standardisation de la description des lieux prend ici tout son sens : elle a pour but de guider la description des lieux et de la rendre exploitable, tout en désambiguïsant au maximum la nature de ces lieux. Les informations ainsi décrites pourraient être réutilisées par la suite, par exemple pour visualiser les données, ou pour faciliter une inscription en base de données. On pourrait ainsi imaginer la création d'une carte rassemblant l'ensemble des lieux évoqués.</p>
+                   </div5>
+                   
+                   <div5><head>Indexation des personnages et personnes : l'élément <gi>particDesc</gi></head>
+                      <p>Cet élément contient un élément <gi>listPerson</gi> contenant une liste de <gi>person</gi> et de <gi>personGrp</gi>. L'élément <gi>person</gi> est utilisé pour faire référence à un personnage unique, tandis que l'élément <gi>personGrp</gi> sert à référencer un groupe de personnes. Il peut en effet être utile de référencer les personnes, mais également les groupes de personnes, notamment lorsqu'ils tiennent un rôle dans l'histoire mais ne sont pas par ailleurs désignés individuellement.</p>                    
+                      <p>Ces éléments portent un attribut <att>xml:id</att> dont la valeur est un identifiant unique. Il porte également un attribut <att>role</att>, dont la valeur est obligatoirement <val>character</val> (il s'agit d'un personnage), <val>real_person</val> (il s'agit d'une personne réelle à qui il est fait référence dans le texte, sans que cette dernière ne possède une présence active dans l'histoire) ou <val>real_character</val> (il s'agit d'une personne réelle explicitement nommée et introduite en tant que personnage dans le texte). Ce schéma préconise de rassembler ces différentes catégories dans une même <gi>listPerson</gi>, plutôt que de placer les personnages fictifs et les personnes réelles dans deux listes différentes, justement pour prendre en considération la possibilité du cas des <val>real_character</val>. L'encodeur est invité à mener une réflexion et à prendre du recul sur la typologie des personnes et des personnages, notamment lorsqu'il s'agit du personnage de narrateur ou de personnages que l'auteur présenterait comme réels ou inspirés de personnes réelles : la valeur d'attribut <val>real_character</val> ne devrait être utilisée que lorsque le lien entre le personnage et une personne réelle est explicitement énoncé et que la personne réelle est nommée, et non lorsque l'auteur nous invite à penser, par exemple, qu'un personnage est inspiré de l'un de ses proches, mais sans le nommer.</p>
+                      <p>Les éléments <gi>person</gi> et <gi>personGrp</gi> porteront également un attribut <att>sex</att> permettant de spécifier le genre du personnage ou du groupe : <val>female</val>, <val>male</val>, <val>other</val>, <val>mixed</val> (dans le cas d'un groupe mixte) ou <val>undefined</val>.</p>
+                      <p>L'élément <gi>person</gi> contient un élément <gi>persName</gi>, là où l'élément <gi>personGrp</gi> contient un élément <gi>name</gi>. Ces éléments alternatifs comprennent en texte libre le nom du personnage, de la personne ou du groupe. L'encodeur est invité à choisir le nom le plus neutre et représentatif possible : nom, prénom, éventuel titre. Si le nom et le prénom du personnage ne sont pas connus, l'encodeur choisira de préférence une appellation tirée du texte. Vient ensuite un éventuel élément <gi>note</gi> qui permet de donner plus d'informations sur le personnages, et qui explicite au besoin ses éventuels liens avec les autres personnages.</p>
+                   </div5>                   
+                </div4>                  
+             </div3>
+             
+             <div3>
+                <head>L'élément <gi>text</gi></head>
+                <p>L'élément <gi>text</gi> contient le texte transcrit et encodé en tant que tel. Il contient un élément <gi>body</gi>.</p>
+                
+                <div4>
+                   <head>L'élément <gi>body</gi></head>
+                   <p>L'élément <gi>body</gi> contient le corps du texte. Il est porteur d'un attribut <att>xml:lang</att> qui suit les règles énoncées précédemment.</p>
+                   
+                   <div5><head>Titres et divisions intellectuelles</head>
+                      <p>Des éléments <gi>div</gi>, numérotés, servent à baliser la structure intellectuelle générale du texte. Ils sont porteurs d'un attribut <att>type</att> dont la valeur précise le niveau de la <gi>div</gi> au sein de la structure intellectuelle. Dans le cas où plusieurs <gi>div</gi> de même niveau peuvent coexister, il sera pertinent de leur faire porter un attribut <att>n</att> afin de les numéroter. Ainsi, par exemple :</p>
+                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                         <div1 type="paper">
+                            <div2 type="episode" n="1">
+                               <!-- contenu de l'épisode 1--> 
+                            </div2>
+                            <div2 type="episode" n="2">
+                               <!-- contenu de l'épisode 2-->
+                            </div2>
+                         </div1>
+                      </egXML>
+                      <p>Les titres, quel que soit leur niveau, sont contenus par un élément <gi>head</gi>.</p>
+                      <p>Les éventuelles datations liées aux titres sont balisées avec l'élément <gi>dateline</gi>.</p>
+                      <p>La structuration intellectuelle en paragraphes est indiquée grâce à des éléments <gi>p</gi>.</p>
+                   </div5>
+                   
+                   <div5><head>Reproduction de la structuration des pages</head>
+                      <p>La structuration de la page doit être reproduite le plus fidèlement possible.</p>
+                      <p>Les débuts de pages doivent être indiqués par un élément <gi>pb</gi> porteur d'un attribut <att>n</att> dont la valeur est le numéro de la page. Par numérotation de page, on entend son numéro au sein de l'édition encodée, et non au sein de la source. Ainsi, si l'on commence l'édition par une page qui correspond à la page 5 d'un journal, la numérotation commencera bien à 1 au sein de l'encodage, puis passera à 2 pour l'équivalent de la page 6 du journal.</p>
+                      <p>Les éventuels débuts de colonnes seront indiqués par un élément<gi>cb</gi>, lui même porteur d'un attribut <att>n</att>. La valeur de <gi>n</gi> sera le numéro de la colonne, étant entendu que la numérotation ne revient pas à 1 en cas de nouveau début de page.</p>
+                      <p>Les débuts de ligne pourront être indiqués par l'élément <gi>lb</gi>. Ils ne seront cependant pas numérotés. L'élément <gi>lb</gi> a été retenu car il s'agit de signifier le changement de ligne sur la page imprimée, mais ce changement de ligne n'est pas en tant que tel porteur d'une valeur spécifique : il s'agit d'une contrainte liée à la longueur des colonnes.</p>
+                      <p>De même, l'utilisation d'éléments indiquant le début des pages, colonnes et ligne est intéressante dans la mesure où elle coexiste avec un balisage sémantique, en particulier le balisage en paragraphes à l'aide de l'élément <gi>p</gi>. En effet, si un autre système avait été adopté, par exemple l'utilisation d'éléments <gi>div</gi> autour des colonnes, cela aurait pu poser problème si un paragraphe se trouvait par exemple à cheval sur plusieurs colonnes : pour éviter un chevauchement d'éléments, interdit en XML, il aurait fallu traiter un paragraphe unique comme deux paragraphes disctincts, ce qui aurait nuit au respect de la sémantique du texte.</p>
+                   </div5>
+                   
+                   <div5><head>Effets de typographie</head>
+                      <p>La TEI se voulant avant tout sémantique, les effets de typographie contenus dans le texte devront être balisés sémantiques autant que ce peut. Un passage écrit en italique pour des raisons d'emphase sera par exemple balisé à l'aide de l'élément <gi>emph</gi>, porteur d'un attribut <att>rend</att> qui précisera le rendu typographique de l'emphase. Ainsi, par exemple :</p>
+                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                         <emph rend="italic">Ton père</emph> ! reprit-il avec un abandon qui me gagna le cœur tout de suite.
+                      </egXML>
+                      <p>En revanche, le texte qui a une typographie particulière, avant tout pour des raisons de mise en page et sans valeur sémantique clairement repérable, sera balisé à l'aide de l'élément <gi>hi</gi>, lui aussi porteur d'un attribut <att>rend</att>. Ainsi, par exemple :</p>
+                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                         <hi rend="italic">(La suite à demain.)</hi>
+                      </egXML>
+                   </div5>                   
+                </div4>
+             </div3>        
+           </div2>
+            
+           <div2><head>Balisage des personnages, groupes et lieux</head>
+              <p>Les noms de lieux sont balisés par l'élément <gi>placeName</gi>. Lorsqu'il se trouve dans le texte encodé lui-même, il est porteur d'un attribut <att>ref</att> dont la valeur est un identifiant défini dans l'index. Ainsi, par exemple :</p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                 Il passa cependant six mois à <placeName ref="#Paris">Paris</placeName> sans prendre aucun parti et sans vouloir me reparler de lui-même.
+              </egXML>
+              <p>Les noms des personnages, personnes et groupes définis en index seront également systématiquement relevés à l'aide d'un élément <gi>persName</gi>, lui aussi porteur d'un attribut <gi>ref</gi>.</p>
+              <p>Les autres références à une personne ou à un personnage sont, elles, balisées par l'élément <gi>rs</gi>. Cet élément porte un attribut <att>type</att>, qui précise le type de référence :</p>
+              <list>
+                 <item><val>person</val> s'il s'agit d'une référence à une personne sous la forme d'une expression.</item>
+                 <item><val>people</val> s'il s'agit d'une référence à un groupe de personnes sous la forme d'une expression.</item>
+                 <item><val>person_grammar</val> s'il s'agit d'un pronom ou d'un adjectif possessif se rapportant à un personnage. Cependant, les pronoms réfléchis des verbes pronominaux conjugués ne seront pas balisés, étant admis que l'occurrence est déjà identifiée par le sujet du verbe.</item>
+                 <item><val>people_grammar</val> s'il s'agit d'un pronom ou d'un adjectif possessif se rapportant à un groupe. Là aussi, les pronoms réfléchis ne seront pas balisés.</item>
+              </list>              
+              <p>L'élément <gi>rs</gi> porte également un attribut <att>ref</att> dont la valeur est un identifiant défini en index. Cet attribut est obligatoire.</p>
+              <p>Ainsi, par exemple :</p>                 
+                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    Les <rs type="people" ref="#amis_du_pere_Valreg">amis</rs> de <persName ref="#Valreg_pere">M. Valreg</persName> n’avaient donc pas à se préoccuper du sort de <rs type="people" ref="#adelphes_Valreg"><rs type="person_grammar" ref="#Valreg_pere">ses</rs> enfants</rs>, qui, d’ailleurs, ne restaient pas sans protection.
+                 </egXML>
+                 <p>Ce balisage méthodique a pour but de permettre et de faciliter la compréhension et l'étude de l'œuvre et de ses personnages et lieux. Des data visualisations pourraient éventuellement être produites à partir de ces données. Les problématiques suivantes pourraient ainsi être traitées :</p>
+                 <list>
+                    <item>Quels personnages sont présents, et à quel(s) moment(s) de l'histoire ? À quel moment apparaissent-ils ? Certains s'éclipsent-ils ?</item>
+                    <item>Tel ou tel personnage est-il majoritairement désigné par son nom, ou par des expressions ? Il serait ensuite possible d'étudier les expressions qui servent à désigner les différents personnages, puisqu'elles auront été repérées dans le texte et seraient donc facilement exploitables.</item>
+                    <item>Quels personnages sont liés à quels lieux ?</item>
+                    <item>Comment se succèdent les lieux ?</item>
+                 </list>
+                 <p>Ce balisage pourrait également permettre d'étudier les références intellectuelles citées, à travers l'occurrence de personnes indexées en tant que <val>real_person</val>. Cette étude pourrait se faire à l'échelle de l'œuvre, mais également, si ce schéma est appliquée à un nombre suffisant d'œuvre, à l'échelle de plusieurs œuvres. On pourrait alors, par exemple, se poser les questions suivantes :</p>
+              <list>
+                 <item>Certaines personnes sont-elles particulièrement citées ?</item>
+                 <item>Ces références ont-elles lieux dans la narration, ou à travers la bouche des personnages ? Dans ce deuxième cas, à quel(s) personnage(s) sont-elles liées ?</item>
+                 <item>Dans quel type d'œuvres est la plus citée telle ou telle personne ?</item>
+                 <item>Telle personne est-elle plus ou moins mentionnée au fil du temps ? À quelle époque telle personne est-elle particulièrement mentionnée ?</item>
+                 <item>Y a-t-il des œuvres qui ne mentionnent aucune personne réelle ?</item>
+              </list>
+           </div2>
+            
+           <div2><head>Balisage des prises de parole</head>
+              <p>Les prises de parole sont balisées par l'élément <gi>said</gi>. Cet élément est porteur de plusieurs attributs obligatoires. L'attribut <att>who</att> a pour valeur l'identifiant du personnage qui parle ; cet identifiant a été défini en index. L'attribut <att>toWhom</att> a pour valeur l'identifiant unique du personnage auquel le discours est adressé ; sa valeur est également un identifiant ou, à défaut, la valeur <val>undefined</val>. Enfin, cet élément est porteur d'un élément <att>direct</att> qui permet de spécifier si le discours est direct ou indirect. Sa valeur est un booléen : <val>true</val> ou <val>false</val>.</p>
+              <p>Ce balisage permet une meilleure étude du dialogue et des liens entre personnages :</p>
+              <list>
+                 <item>Tous les personnages prennent-ils la parole ?</item>
+                 <item>Quels personnages s'adressent la parole ?</item>
+                 <item>Quels personnages interagissent le plus ?</item>
+                 <item>Quels personnages parlent le plus, en volume absolu ou en nombre de prises de parole ?</item>
+                 <item>Qui parle de qui ? (si l'on croise les données liées aux dialogues avec le balisage des noms de personnes et des références à des personnes)</item>
+              </list>
+              <p>La réponse à ces questions et à d'autres pourrait faciliter l'élaboration d'un état des lieux des relations qui existent entre les différents personnages du roman.</p>
+              <p>Baliser les dialogues peut également faciliter une analyse stylistique voire stylométrique du texte, en permettant d'établir la part de dialogue que contient le texte. Une exploitation scientifique sur des thèmes plus précis serait également possible. En croisant les informations de dialogues avec les données du champs <gi>sex</gi> des items de l'index, il serait par exemple possible d'enrichir une étude concernant les stéréotypes de genre dans la littérature, par exemple en s'interrogeant sur la répartition du dialogue entre personnages masculins et féminins, ou encore de faire passer le <ref target="https://fr.wikipedia.org/wiki/Test_de_Bechdel">test de Bechdel</ref> à l'œuvre.</p>
+              <p>Le balisage des prises de parole peut être complété par le balisage des incises, grâce à l'élément <gi>seg</gi>. Cet élément porte un attribut <att>type</att> permettant de déclarer qu'il s'agit d'une incise.</p>
+           </div2>
+                   
+           <div2><head>Établissement du texte depuis le fac-similé</head>
+              <p>L'établissement du texte depuis le fac-similé se veut le plus fidèle possible. Dans cette optique, les graphies de l'époque sont conservées : "enfans" pour "enfant", par exemple. Un élément <gi>choice</gi> peut cependant être utilisé pour signaler des erreurs manifestes dans le texte, comme l'omission d'un mot que la grammaire requière, ou lorsque le nom d'une personne réelle a été mal orthographié. Cet élément contient un élément <gi>sic</gi> contenant le texte tel que présent dans la source, de même qu'un élément <gi>corr</gi>, contenant la correction proposée par l'encodeur et/ou le transcripteur. Ainsi, par exemple :</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <choice><sic>Shakspeare</sic><corr>Shakespeare</corr></choice>
+               </egXML>   
+            </div2>
+         </div1>
+         
+         <!-- Les modifications manuelles sont introduites par un commentaire comportant la mention "modification manuelle" ; le ou la lecteur·ice est invité·e à effectuer une recherche (CTRL+F dans oXygen Editor et la plupart des éditeurs de code) pour les localiser au sein du document. Cette mention est accompagnée d'un bref commentaire dont le but est de présenter la modification effectuée.-->
+
+         
+          <div1>
+             <head>Spécifications</head>
+             <schemaSpec ident="oddbyexample" start="TEI ">
+             <moduleRef key="tei"/>
+             <!--Checking module textcrit-->
+             <classRef key="att.textCritical"/>
+             <classRef key="model.rdgLike"/>
+             <classRef key="model.rdgPart"/>
+             <classSpec ident="att.textCritical" type="atts" mode="change">
+                <attList>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="cause" mode="delete"/>
+                   <attDef ident="varSeq" mode="delete"/>
+                   <attDef ident="require" mode="delete"/>
+                </attList>
+             </classSpec>
+             <!--Checking module msdescription-->
+             <classRef key="model.physDescPart"/>
+             <!--Checking module namesdates-->
+             <classRef key="att.datable.iso"/>
+             <classRef key="model.persNamePart"/>
+             <moduleRef key="namesdates"
+                        include="persName surname forename placeName country region settlement district listPerson listPlace person personGrp place"/>
+             <elementSpec ident="persName" mode="change">
+                <!-- Modification manuelle : l'élément persName doit avoir un attribut ref lorsqu'il est un descendant de l'élement text.-->
+                <constraintSpec scheme="schematron" ident="refRequiredPersName">
+                   <constraint>
+                      <s:rule context="tei:TEI/tei:text//tei:persName">
+                         <s:assert test="@ref">When the element persName is a descendant of the element text, it must have an attribute ref.</s:assert>
+                      </s:rule>
+                   </constraint>
+                </constraintSpec>
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                   <attDef ident="full" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="yes"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="surname" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="full" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="yes"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="forename" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="full" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="yes"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="placeName" mode="change">
+                <!-- Modification manuelle : l'élément placeName doit avoir un attribut ref lorsqu'il est un descendant de l'élement text.-->
+                <constraintSpec scheme="schematron" ident="refRequiredPlaceName">
+                   <constraint>
+                      <s:rule context="tei:TEI/tei:text//tei:placeName">
+                         <s:assert test="@ref">When the element placeName is a descendant of the element text, it must have an attribute ref.</s:assert>
+                      </s:rule>
+                   </constraint>
+                </constraintSpec>
+                <attList>
+                   <attDef ident="when-iso" mode="delete"/>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="full" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="yes"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="country" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="region" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="settlement" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="city"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="district" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="arrondissement"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="listPerson" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="listPlace" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="person" mode="change">
+                <attList>
+                   <!--modification manuelle : l'attribut role de l'élément person peut également prendre la valeur "real_character" afin de prendre en compte le cas où une personne réelle serait explicitement nommée et introduite en tant que personnage dans le texte-->
+                   <attDef ident="role" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="character"/>
+                         <valItem ident="real_person"/>
+                         <valItem ident="real_character"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="age" mode="delete"/>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="personGrp" mode="change">
+                <attList>
+                   <!-- modification manuelle : l'attribut role peut également avoir pour valeur real_people ou real_characters-->
+                   <attDef ident="role" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="characters"/>
+                         <valItem ident="real_people"/>
+                         <valItem ident="real_characters"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="age" mode="delete"/>
+                   <attDef ident="size" mode="delete"/>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="place" mode="change">
+                <!-- modification manuelle : place contient obligatoirement un élément placeName et peut contenir un élément note.-->
+                <content>
+                   <sequence preserveOrder="true">
+                      <elementRef key="placeName" minOccurs="1"
+                         maxOccurs="1"/>
+                      <elementRef key="note" minOccurs="0" maxOccurs="1"/>
+                   </sequence>
+                </content>
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="avenue"/>
+                         <valItem ident="city"/>
+                         <valItem ident="country"/>
+                         <valItem ident="other"/>
+                         <valItem ident="region"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <classSpec ident="att.datable.iso" type="atts" mode="change">
+                <attList>
+                   <attDef ident="notBefore-iso" mode="delete"/>
+                   <attDef ident="notAfter-iso" mode="delete"/>
+                   <attDef ident="from-iso" mode="delete"/>
+                   <attDef ident="to-iso" mode="delete"/>
+                </attList>
+             </classSpec>
+             <!--Checking module dictionaries-->
+             <classRef key="att.lexicographic"/>
+             <classRef key="model.entryLike"/>
+             <classRef key="model.formPart"/>
+             <classRef key="model.gramPart"/>
+             <classRef key="model.lexicalRefinement"/>
+             <classRef key="model.morphLike"/>
+             <classRef key="model.ptrLike.form"/>
+             <moduleRef key="dictionaries" include="lang"/>
+             <elementSpec ident="lang" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <classSpec ident="att.lexicographic" type="atts" mode="change">
+                <attList>
+                   <attDef ident="expand" mode="delete"/>
+                   <attDef ident="split" mode="delete"/>
+                   <attDef ident="value" mode="delete"/>
+                   <attDef ident="location" mode="delete"/>
+                   <attDef ident="mergedIn" mode="delete"/>
+                </attList>
+             </classSpec>
+             <!--Checking module tagdocs-->
+             <classRef key="att.combinable"/>
+             <classRef key="att.identified"/>
+             <classRef key="model.contentPart"/>
+             <classSpec ident="att.combinable" type="atts" mode="change">
+                <attList>
+                   <attDef ident="mode" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.identified" type="atts" mode="change">
+                <attList>
+                   <attDef ident="ident" mode="delete"/>
+                   <attDef ident="predeclare" mode="delete"/>
+                   <attDef ident="module" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.anchoring" type="atts" mode="change">
+                <attList>
+                   <attDef ident="targetEnd" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.dimensions" type="atts" mode="change">
+                <attList>
+                   <attDef ident="unit" mode="delete"/>
+                   <attDef ident="quantity" mode="delete"/>
+                   <attDef ident="extent" mode="delete"/>
+                   <attDef ident="precision" mode="delete"/>
+                   <attDef ident="scope" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.damaged" type="atts" mode="change">
+                <attList>
+                   <attDef ident="agent" mode="delete"/>
+                   <attDef ident="degree" mode="delete"/>
+                   <attDef ident="group" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.datable" type="atts" mode="change">
+                <attList>
+                   <attDef ident="calendar" mode="delete"/>
+                   <attDef ident="period" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.editLike" type="atts" mode="change">
+                <attList>
+                   <attDef ident="evidence" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.media" type="atts" mode="change">
+                <attList>
+                   <attDef ident="width" mode="delete"/>
+                   <attDef ident="height" mode="delete"/>
+                   <attDef ident="scale" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.interpLike" type="atts" mode="change">
+                <attList>
+                   <attDef ident="inst" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.naming" type="atts" mode="change">
+                <attList>
+                   <attDef ident="role" mode="delete"/>
+                   <attDef ident="nymRef" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.typed" type="atts" mode="change">
+                <attList>
+                   <attDef ident="subtype" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.pointing" type="atts" mode="change">
+                <attList>
+                   <attDef ident="targetLang" mode="delete"/>
+                   <attDef ident="evaluate" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.pointing.group" type="atts" mode="change">
+                <attList>
+                   <attDef ident="domains" mode="delete"/>
+                   <attDef ident="targFunc" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.segLike" type="atts" mode="change">
+                <attList>
+                   <attDef ident="function" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.timed" type="atts" mode="change">
+                <attList>
+                   <attDef ident="start" mode="delete"/>
+                   <attDef ident="end" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.transcriptional" type="atts" mode="change">
+                <attList>
+                   <attDef ident="status" mode="delete"/>
+                   <attDef ident="cause" mode="delete"/>
+                   <attDef ident="seq" mode="delete"/>
+                </attList>
+             </classSpec>
+             <classSpec ident="att.personal" type="atts" mode="change">
+                <attList>
+                   <attDef ident="sort" mode="delete"/>
+                </attList>
+             </classSpec>
+             <!--Checking module core-->
+             <moduleRef key="core"
+                        include="p emph hi said sic corr choice name rs address street postCode num date head note pb lb cb author respStmt resp title publisher biblScope pubPlace bibl"/>
+             <elementSpec ident="p" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="part" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="N"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="emph" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <!-- modification manuelle : l'élément emph contient obligatoirement un attribut rend dont la valeur suggérée est italic, bold ou underlined.-->
+                   <attDef ident="rend" mode="change" usage="req">
+                      <valList mode="add" type="semi">
+                         <valItem ident="italic"/>
+                         <valItem ident="bold"/>
+                         <valItem ident="underlined"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="hi" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <!-- modification manuelle : l'élément hi contient obligatoirement un attribut rend dont la valeur suggérée est italic, bold ou underlined.-->
+                   <attDef ident="rend" mode="change" usage="req">
+                      <valList mode="add" type="semi">
+                         <valItem ident="italic"/>
+                         <valItem ident="bold"/>
+                         <valItem ident="underlined"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="said" mode="change">
+                <!-- modification manuelle : les attributs who, toWhom et direct sont obligatoires-->
+                <attList>
+                   <attDef ident="who" mode="change" usage="req"/>                   
+                   <attDef ident="toWhom" mode="change" usage="req"/>
+                   <attDef ident="direct" mode="change" usage="req"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="sic" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="corr" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="choice" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="name" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="full" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="yes"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="rs" mode="change">
+                <!-- modification manuelle : l'élément rs doit contenir un attribut ref.-->
+                <constraintSpec scheme="schematron" ident="rsRefMandatory">
+                   <constraint>
+                      <s:rule context="tei:rs">
+                         <s:assert test="@ref">The element rs must contain the attribute ref.</s:assert>
+                      </s:rule>
+                   </constraint>                   
+                </constraintSpec>
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="people_grammar"/>
+                         <valItem ident="people"/>
+                         <valItem ident="person"/>
+                         <valItem ident="person_grammar"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="address" mode="change">
+                <!-- modification manuelle : l'élément address contient obligatoirement, et dans cet ordre, un élément country, un élément settlement, un élément postCode, un élément district et un élément street-->
+                <content>
+                   <sequence preserveOrder="true">
+                      <elementRef key="country" minOccurs="1"
+                         maxOccurs="1"/>
+                      <elementRef key="settlement" minOccurs="1"
+                         maxOccurs="1"/>
+                      <elementRef key="postCode" minOccurs="1" maxOccurs="1"/>
+                      <elementRef key="district" minOccurs="1" maxOccurs="1"/>
+                      <elementRef key="street" minOccurs="1" maxOccurs="1"/>
+                   </sequence>
+                </content>
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="street" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="postCode" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="num" mode="change">
+                <attList>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="value" mode="delete"/>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="date" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="head" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="note" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="target" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="pb" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="lb" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="cb" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="author" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="respStmt" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="resp" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="title" mode="change">
+                <attList>
+                   <attDef ident="level" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="publisher" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="biblScope" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <!-- modification manuelle : l'attribut unit de l'élément bibliScope peut également porter la valeur "episode"-->
+                   <attDef ident="unit" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="book"/>
+                         <valItem ident="chapter"/>
+                         <valItem ident="episode"/>
+                         <valItem ident="page"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="pubPlace" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="bibl" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="type" mode="delete"/>
+                   <attDef ident="status" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="draft"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <!--Checking module figures-->
+             <!--Checking module header-->
+             <moduleRef key="header"
+                        include="teiHeader fileDesc titleStmt extent publicationStmt distributor availability licence seriesStmt sourceDesc biblFull encodingDesc projectDesc profileDesc creation"/>
+             <elementSpec ident="teiHeader" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="fileDesc" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="titleStmt" mode="change">
+                   <!-- modification manuelle : l'élément titleStmt contient un à plusieurs élément(s) title, suivi par zéro ou un élément author, suivi par zéro ou un élément respStmt.-->
+                   <content>
+                      <sequence preserveOrder="true">
+                         <elementRef key="title" minOccurs="1"
+                            maxOccurs="unbounded"/>
+                         <elementRef key="author" minOccurs="0" maxOccurs="unbounded"/>
+                         <elementRef key="respStmt" minOccurs="0"
+                            maxOccurs="1"/>
+                      </sequence>
+                   </content>
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="extent" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="publicationStmt" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="distributor" mode="change">
+                <attList>
+                   <attDef ident="key" mode="delete"/>
+                   <attDef ident="ref" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="availability" mode="change">
+                <attList>
+                   <attDef ident="status" mode="delete"/>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="licence" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="seriesStmt" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="sourceDesc" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="biblFull" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="status" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="draft"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="encodingDesc" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="projectDesc" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="profileDesc" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="creation" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="when-iso" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <!--Checking module gaiji-->
+             <!--Checking module verse-->
+             <!--Checking module transcr-->
+             <classRef key="att.global.facs"/>
+             <!--Checking module linking-->
+             <moduleRef key="linking" include="seg"/>
+             <elementSpec ident="seg" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="part" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="N"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="incise"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <!--Checking module analysis-->
+             <classRef key="att.linguistic"/>
+             <classSpec ident="att.linguistic" type="atts" mode="change">
+                <attList>
+                   <attDef ident="lemma" mode="delete"/>
+                   <attDef ident="lemmaRef" mode="delete"/>
+                   <attDef ident="pos" mode="delete"/>
+                   <attDef ident="msd" mode="delete"/>
+                   <attDef ident="join" mode="delete"/>
+                </attList>
+             </classSpec>
+             <!--Checking module textstructure-->
+             <moduleRef key="textstructure" include="TEI text body div1 div2 div3 dateline"/>
+             <elementSpec ident="TEI" mode="change">
+                <attList>
+                   <attDef ident="version" mode="delete"/>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="text" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="type" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="body" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="div1" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="org" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="uniform"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="sample" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="complete"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="part" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="N"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="paper"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="div2" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="org" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="uniform"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="sample" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="complete"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="part" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="N"/>
+                      </valList>
+                   </attDef>
+                   <!-- modification manuelle : l'attribut type de l'élément div2 peut également porter la valeur "episode"-->
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="chapter"/>
+                         <valItem ident="episode"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="div3" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="org" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="uniform"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="sample" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="complete"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="part" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="N"/>
+                      </valList>
+                   </attDef>
+                   <attDef ident="type" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="folio"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="dateline" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                </attList>
+             </elementSpec>
+             <!--Checking module corpus-->
+             <moduleRef key="corpus" include="particDesc settingDesc"/>
+             <elementSpec ident="particDesc" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+             <elementSpec ident="settingDesc" mode="change">
+                <attList>
+                   <attDef ident="facs" mode="delete"/>
+                   <attDef ident="default" mode="change">
+                      <valList mode="add" type="closed">
+                         <valItem ident="false"/>
+                      </valList>
+                   </attDef>
+                </attList>
+             </elementSpec>
+          </schemaSpec>
+         </div1>
+      </body>
+   </text>
+</TEI>

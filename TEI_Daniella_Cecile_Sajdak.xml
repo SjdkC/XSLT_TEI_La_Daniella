@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml-model href="RNG_Daniella_Cecile_Sajdak.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="RNG_Daniella_Cecile_Sajdak.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+    <teiHeader>
+       
+      <fileDesc>
+         
+         <titleStmt>
+            <title>La Daniella - Édition encodée du premier chapitre du roman feuilleton</title>
+            <respStmt>
+               <resp>Encodage réalisé par</resp>
+               <persName xml:id="Cecile_Sajdak">
+                  <forename>Cécile</forename>
+                  <surname>Sajdak</surname>
+               </persName>
+            </respStmt>
+         </titleStmt>
+         
+         <extent>66,7 kB</extent>
+         
+         <publicationStmt>
+            <p>Encodage réalisé dans le cadre du contrôle terminal du cours de XML TEI dispensé par Ségolène Albouy pour le master TNAH (2021-2022).</p>            
+         </publicationStmt>
+         
+         <sourceDesc>
+            <biblFull>
+               <titleStmt>
+                  <title>La Daniella</title>
+                  <author ref="https://catalogue.bnf.fr/ark:/12148/cb119236010">
+                     <persName xml:id="George_Sand"><forename>George</forename>
+                     <surname>Sand</surname></persName>
+                  </author>
+               </titleStmt>
+               <publicationStmt>
+                  <publisher>La Presse</publisher>
+                  <pubPlace>
+                     <address>
+                        <country key="FR"/>
+                        <settlement type="city">Paris</settlement>
+                        <postCode>75002</postCode>
+                        <district type="arrondissement">2e</district>
+                        <street>Rue Montmartre, <num>123</num>
+                        </street>
+                     </address>
+                  </pubPlace>
+                  <date when-iso="1857-01-06">6 janvier 1857</date>
+                  <distributor facs="https://gallica.bnf.fr/ark:/12148/bpt6k477546m/">Gallica
+                     Bibliothèque nationale de France</distributor>
+                  <availability>
+                     <licence
+                        target="https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica"
+                        >Domaine public</licence>
+                  </availability>
+               </publicationStmt>
+               <seriesStmt>
+                  <title>La Daniella</title>
+                  <biblScope unit="book">La Daniella</biblScope>
+                  <biblScope unit="episode">I</biblScope>
+                  <biblScope unit="page" from="1" to="2">1-2</biblScope>        
+               </seriesStmt>
+            </biblFull>
+         </sourceDesc>
+         
+      </fileDesc>
+       
+       <encodingDesc>
+          <projectDesc>
+             <p>Cet encodage a été réalisé dans le cadre de l'évaluation du cours XML TEI du Master 2 TNAH. </p>
+          </projectDesc>
+          <p>Il a été réalisé à partir de la numérisation disponible sur Gallica du journal
+             <bibl>La Presse</bibl> daté du 6 janvier 1857, et contenant la première partie de l'introduction du roman feuilleton La Daniella écrit par George Sand, et qui a été transcrit le plus fidèlement possible.
+          </p>
+          <p>Pour plus de précisions sur les choix d'encodage, se référer à l'ODD liée à ce fichier.
+          </p>          
+       </encodingDesc>       
+       
+      <profileDesc>
+         <creation>
+            <date when-iso="1856">1856</date>
+            <country key="FR">France</country>
+            <lang xml:lang="fr"/>
+         </creation>
+         
+         <settingDesc>
+            <listPlace>
+
+               <place xml:id="Paris" type="city">
+                  <placeName>
+                     <name>Paris</name>
+                     <address>
+                        <country key="FR"/>
+                        <settlement type="city"/>
+                        <postCode>75000</postCode>
+                        <district>none</district>
+                        <street>none</street>
+                     </address>
+                  </placeName>
+                  <note>Capitale de la France. Le <rs type="person" ref="#narrateur">narrateur</rs> y vit. <persName ref="#Jean_Valreg">Jean Valreg</persName> y a emménagé peu avant le début de l'histoire.</note>
+               </place>
+
+               <place xml:id="Berry" type="region">
+                  <placeName>
+                     <name>Le Berry</name>
+                     <address>
+                        <country key="FR"/>
+                        <settlement>none</settlement>
+                        <postCode>none</postCode>
+                        <district>none</district>
+                        <street>none</street>
+                     </address>
+                  </placeName>
+                  <note>Province française historique aux environs de la ville de Bourges. Le <rs type="person" ref="#Valreg_pere">père de <persName ref="#Jean_Valreg">Jean Valreg</persName></rs> en est originaire.</note>
+               </place>
+               
+               <place xml:id="province" type="other">
+                  <placeName>
+                     <name>La Province</name>
+                     <address>
+                        <country key="Fr"/>
+                        <settlement>none</settlement>
+                        <postCode>none</postCode>
+                        <district>none</district>
+                        <street>none</street>
+                     </address>
+                  </placeName>
+                  <note>L'ensemble de la France à l'exception de Paris et de la région parisienne.</note>
+               </place>
+
+            </listPlace>
+         </settingDesc>
+         
+         <particDesc>
+            <listPerson>
+
+               <person xml:id="Jean_Valreg" role="character" sex="male">
+                  <persName>Jean Valreg</persName>
+                  <note>Jean Valreg est un jeune homme qui a été élevé par <rs type="person" ref="#oncle_pretre">son oncle</rs> 
+                     depuis ses douze ans, après la mort de <rs type="person" ref="#Valreg_pere">son père</rs>. Il décide
+                     de partir vivre à <placeName ref="#Paris">Paris</placeName> et y retrouve <rs type="person" ref="#narrateur">le narrateur</rs>.</note>
+               </person>
+
+               <person xml:id="narrateur" role="character" sex="male">
+                  <persName>Le narrateur</persName>
+                  <note>Le narrateur était un ami du <rs type="person" ref="#Valreg_pere">père</rs> décédé
+                     de <persName ref="#Jean_Valreg">Jean Valreg</persName>. Il apprécie le jeune homme et le prend sous son aile à son arrivée à Paris. Le narrateur s'exprime à la première personne du singulier, principalement, mais également à la première personne du pluriel.</note>
+               </person>
+
+               <person xml:id="Valreg_pere" role="character" sex="male">
+                  <persName>Le père de Jean Valreg</persName>
+                  <note>Il est le père de <persName ref="#Jean_Valreg">Jean Valreg</persName> et de <persName ref="#Juliette_Valreg">Juliette Valreg</persName>. Il a laissé un héritage à ses enfants, ce qui permet à <persName ref="#Jean_Valreg">Jean Valreg</persName> de toucher une rente.</note>
+               </person>
+
+               <person xml:id="Juliette_Valreg" role="character" sex="female">
+                  <persName>Juliette Valreg</persName>
+                  <note>Juliette est la soeur cadette de <persName ref="#Jean_Valreg">Jean Valreg</persName>. Après la mort de <rs type="person" ref="#Valreg_pere">leur père</rs>, <rs type="people" ref="#deux_tantes">deux de ses tantes</rs> se sont disputée sa garde. Décédée.</note>
+               </person>
+               
+               <person xml:id="oncle_pretre" role="character" sex="male">
+                  <persName>L'oncle prêtre</persName>
+                  <note>Oncle de <persName ref="#Jean_Valreg">Jean Valreg</persName>, il l'a élevé à 
+                     partir de ses douze ans. S'il l'a bien traîté, <persName ref="#Jean_Valreg">Jean Valreg</persName>
+                     regrette qu'il ne lui ait pas donné plus d'éducation.</note>
+               </person>
+               
+               <person xml:id="mere_Valreg" role="character" sex="female">
+                  <persName>La mère de Jean Valreg</persName>
+                  <note>Elle est la mère de <persName ref="#Jean_Valreg">Jean Valreg</persName> 
+                     et de <persName ref="#Juliette_Valreg">Juliette</persName>. Morte jeune.</note>
+               </person>
+               
+               <person xml:id="lecteur" role="character" sex="undefined">
+                  <persName>Le lecteur</persName>
+                  <note>Le lecteur, auquel <persName ref="#narrateur">le narrateur</persName> s'adresse
+                     épisodiquement.</note>
+               </person>
+               
+               <person xml:id="servante_oncle" role="character" sex="female">
+                  <persName>La vieille servante</persName>
+                  <note>La servante de <rs type="person" ref="#oncle_pretre">l'oncle</rs> de <persName ref="#Jean_Valreg">Jean Valreg</persName>.</note>
+               </person>
+               
+               <personGrp xml:id="adelphes_Valreg" role="characters" sex="mixed">
+                  <name>Les adelphes Valreg</name>
+                  <note>Les adelphes Valreg, soit <persName ref="#Jean_Valreg">Jean Valreg</persName>
+                     et <persName ref="#Juliette_Valreg">Juliette Valreg</persName>.</note>
+               </personGrp>
+               
+               <personGrp xml:id="deux_tantes" role="characters" sex="female">
+                  <name>Deux tantes</name>
+                  <note>Les deux tantes de <persName ref="#Jean_Valreg">Jean Valreg</persName>
+                     et de <persName ref="#Juliette_Valreg">Juliette</persName>. Elles se sont disputées la garde
+                     de <persName ref="#Juliette_Valreg">Juliette</persName> à la mort de <rs type="person" ref="Valreg_pere">son père</rs>.</note>
+               </personGrp>
+               
+               <personGrp xml:id="oncles_et_tantes" role="characters" sex="mixed">
+                  <name>Oncles et tantes</name>
+                  <note>Les oncles et tantes de <persName ref="#Jean_Valreg">Jean Valreg</persName>
+                     et de <persName ref="#Juliette_Valreg">Juliette Valreg</persName>.</note>
+               </personGrp>
+               
+               <personGrp xml:id="amis_de_Jean_Valreg" role="characters" sex="mixed">
+                  <name>Les amis de <persName ref="#Jean_Valreg">Jean Valreg</persName></name>
+               </personGrp>
+               
+               <personGrp xml:id="amis_du_pere_Valreg" role="characters" sex="mixed">
+                  <name>Les amis du <rs type="person" ref="#Valreg_pere">père</rs> de <persName ref="#Jean_Valreg">Jean Valreg</persName> et de <persName ref="#Juliette_Valreg">Juliette Valreg</persName></name>
+               </personGrp>
+               
+               <personGrp xml:id="famille_narrateur" role="characters" sex="undefined">
+                  <name>La famille du <rs type="person" ref="#narrateur">narrateur</rs></name>
+                  <note>Nous ne disposons pas de plus de précisions sur la composition de sa famille ; le <rs type="person" ref="#narrateur">narrateur</rs> la désigne, en s'incluant en son sein, en utilisant la première personne du pluriel. Dans ce cas, la famille est la seule à être identifiée ; le <rs type="person" ref="#narrateur">narrateur</rs> n'est pas en plus référencé individuellement, puisqu'il est inclu dans la famille.</note>
+               </personGrp>
+               
+               <person xml:id="Platon" role="real_person" sex="male">
+                  <persName>Platon</persName>
+                  <note>Philosophe athénien de la période classique.</note>
+               </person>
+               
+               <person xml:id="Leibniz" role="real_person" sex="male">
+                  <persName>Gottfried Wilhelm Leibniz</persName>
+                  <note>Philosophe allemand des XVIIe et XVIIIe siècles.</note>
+               </person>
+               
+               <person xml:id="Rousseau" role="real_person" sex="male">
+                  <persName>Jean-Jacques Rousseau</persName>
+                  <note>Philosophe et écrivain des Lumières.</note>
+               </person>
+               
+               <person xml:id="Scott" role="real_person" sex="male">
+                  <persName>Walter Scott</persName>
+                  <note>Poète, écrivain et historien écossais des XVIIIe et XIXe siècles.</note>
+               </person>
+               
+               <person xml:id="Shakespeare" role="real_person" sex="male">
+                  <persName>William Shakespeare</persName>
+                  <note>Dramaturge, poète et comédien anglais des XVIe et XVIIe siècles.</note>
+               </person>
+               
+               <person xml:id="Byron" role="real_person" sex="male">
+                  <persName>Lord Byron</persName>
+                  <note>Lord Byron, ou George Gordon Byron, est un poète anglais du début du XIXe siècle.</note>
+               </person>
+               
+               <person xml:id="Goethe" role="real_person" sex="male">
+                  <persName>Johann Wolfgang von Goethe</persName>
+                  <note>Écrivain, scientifique et homme d'État allemand.</note>
+               </person>
+               
+            </listPerson>
+         </particDesc>
+         
+      </profileDesc>       
+       
+   </teiHeader>
+   
+   <text>
+      <body xml:lang="fr">
+         
+         <div1 type="paper">
+            
+            <pb n="1"/>
+            <cb n="1"/>
+            <head><hi rend="bold">FEUILLETON DE LA PRESSE</hi></head>
+            <dateline>DU MARDI SOIR 6 JANVIER 1857</dateline>
+            <head><hi rend="bold">LA DANIELLA.</hi></head>
+            <div2 type="episode" n="1">
+               <head><hi rend="bold">Introduction.</hi></head>
+               <head><hi rend="bold">I.</hi></head>
+
+                  <p><lb/>Ce que <rs type="person_grammar" ref="#narrateur">nous</rs> allons transcrire sera, pour <rs type="person" ref="#lecteur">le lec-
+                     <lb/>teur</rs>, un roman et un voyage, soit un voyage pen-
+                     <lb/>dant un roman, soit un roman durant un voyage.
+                     <lb/>Pour <rs type="person_grammar" ref="#narrateur">nous</rs>, c’est une histoire réelle, car c’est le 
+                     <lb/>récit, écrit par <rs type="person_grammar" ref="#Jean_Valreg">lui-même</rs>, d’une demi-année de
+                     <lb/>la vie d’<rs type="person" ref="#Jean_Valreg">un de nos amis</rs> : année pleine d’agitations
+                     <lb/>et de douleurs, qui mit en relief et en activité
+                     <lb/>toutes les facultés de <rs type="person_grammar" ref="#Jean_Valreg">son</rs> ame et toute l’indivi-
+                     <lb/>dualité de <rs type="person_grammar" ref="#Jean_Valreg">son</rs> caractère.</p>
+                                 
+                  <p><lb/>Jusque-là, <persName ref="#Jean_Valreg">Jean Valreg</persName> (c’est le pseudonyme
+                     <lb/>qu’<rs type="person_grammar" ref="#Jean_Valreg">il</rs> a choisi <rs type="person" ref="#Jean_Valreg">lui-même</rs>) n’était connu ni de <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> ni
+                     <lb/>des autres. <rs type="person_grammar" ref="#Jean_Valreg">Il</rs> avait eu l’existence la plus sage et
+                     <lb/>la plus calme qu’il soit possible d’avoir au temps
+                     <lb/>où nous vivons. Des circonstances inattendues et
+                     <lb/>romanesques développèrent tout à coup en <rs type="person_grammar" ref="#Jean_Valreg">lui</rs>
+                     <lb/>une passion et une volonté dont <rs type="person_grammar" ref="#Jean_Valreg">ses</rs> <rs type="people" ref="#amis_de_Jean_Valreg">amis</rs> ne <rs type="person_grammar" ref="#Jean_Valreg">le</rs>
+                     <lb/>croyaient pas susceptible. C’est par cet imprévu
+                     <lb/>de <rs type="person_grammar" ref="#Jean_Valreg">ses</rs> idées et de <rs type="person_grammar" ref="#Jean_Valreg">sa</rs> conduite que <rs type="person_grammar" ref="#Jean_Valreg">son</rs> récit, sous
+                     <cb n="2"/>
+                     <lb/>forme de journal, offre quelque intérêt. <rs type="person_grammar" ref="#Jean_Valreg">Ses</rs> im-
+                     <lb/>pressions de voyage ne présentent rien de bien
+                     <lb/>nouveau ; elles n’ont que le mérite d’une sincérité
+                     <lb/>absolue et d’une certaine indépendance d’esprit.
+                     <lb/>Mais <rs type="person_grammar" ref="#narrateur">nous</rs> devons nous abstenir de toute réflexion
+                     <lb/>préliminaire sur son travail : ce serait le déflo-
+                     <lb/>rer. <rs type="person_grammar" ref="#narrateur">nous</rs> nous bornerons à quelques détails sur
+                     <lb/><rs type="person" ref="#Jean_Valreg">l’auteur</rs> <rs type="person" ref="#Jean_Valreg">lui-même</rs>, tel que <rs type="person_grammar" ref="#narrateur">nous</rs> <rs type="person_grammar" ref="#Jean_Valreg">le</rs> connaissions
+                     <lb/>avant qu’<rs type="person_grammar" ref="#Jean_Valreg">il</rs> se révélât, par <rs type="person_grammar" ref="#Jean_Valreg">son</rs> propre récit, d’une
+                     <lb/>manière complète. </p>
+                                 
+                  <p><lb/><persName ref="#Jean_Valreg">J. V.</persName> (soit <persName ref="#Jean_Valreg">Jean Valreg</persName>, puisqu’<rs type="person_grammar" ref="#Jean_Valreg">il</rs> a pris ce nom
+                  <lb/>qui conserve les initiales du <rs type="person_grammar" ref="#Jean_Valreg">sien</rs>), est le fils d’<rs type="person" ref="#Valreg_pere">un
+                     <lb/>de nos plus anciens amis</rs>, mort, il y a une dou-
+                     <lb/>zaine d’années, au fond de <rs type="person_grammar" ref="#narrateur">notre</rs> <placeName ref="#province">province</placeName>. <rs type="person" ref="#Valreg_pere">Val-                     
+                     <lb/>reg père</rs> était avocat. C’était un honnête homme
+                     <lb/>et un homme aimable. <rs type="person_grammar" ref="#Valreg_pere">Son</rs> instruction était sé-
+                     <lb/>rieuse et <rs type="person_grammar" ref="#Valreg_pere">sa</rs> conscience délicate ; mais, comme
+                     <lb/>beaucoup de <rs type="person_grammar" ref="#narrateur">nos</rs> concitoyens du <placeName ref="#Berry">Berry</placeName>, <rs type="person_grammar" ref="#Valreg_pere">il</rs> man-
+                     <lb/>quait d’activité. <rs type="person_grammar" ref="#Valreg_pere">Il</rs> laissa pour toute fortune, à <rs type="person_grammar" ref="#Valreg_pere">ses</rs>
+                     <lb/><rs type="people" ref="#adelphes_Valreg">deux enfants</rs>, vingt mille francs à partager.</p>
+                     <lb/><p>En <placeName ref="#province">province</placeName>, c’est de quoi vivre sans rien faire.
+                     <lb/>Partout, c’est de quoi acquérir l’éducation néces-
+                     <lb/>saire à une profession libérale, ou fonder un pe-
+                     <lb/>tit commerce. Les <rs type="people" ref="#amis_du_pere_Valreg">amis</rs> de <persName ref="#Valreg_pere">M. Valreg</persName> n’avaient
+                        <lb/>donc pas à se préoccuper du sort de <rs type="people" ref="#adelphes_Valreg"><rs type="person_grammar" ref="#Valreg_pere">ses</rs> enfants</rs>,
+                     <lb/>qui, d’ailleurs, ne restaient pas sans protection.
+                     <lb/><rs type="people_grammar" ref="#adelphes_Valreg">Leur</rs> <rs type="person" ref="#mere_Valreg">mère</rs> était morte jeune ; mais <rs type="people_grammar" ref="#adelphes_Valreg">ils</rs> avaient <rs type="people" ref="#oncles_et_tantes">des
+                     <lb/>oncles et des tantes</rs>, honnêtes gens aussi et pleins de sollicitude pour eux.</p>
+                     <lb/><p>Pour <rs type="person_grammar" ref="#narrateur">ma</rs> part, <rs type="person_grammar" ref="#narrateur">je</rs> <rs type="people_grammar" ref="#adelphes_Valreg">les</rs> avais entièrement perdus
+                     <lb/>de vue depuis longtemps, lorsqu’un matin, on
+                     <lb/><rs type="person_grammar" ref="#narrateur">m’</rs>annonça <persName ref="#Jean_Valreg">M. Jean Valreg</persName>.</p>
+                                 
+                  <p><lb/><rs type="person_grammar" ref="#narrateur">Je</rs> vis entrer <rs type="person" ref="#Jean_Valreg">un garçon d’une vingtaine d’an-
+                     <lb/>nées</rs>, dont la taille et la figure n’avaient, au pre-
+                     <lb/>mier abord, rien de remarquable. <rs type="person_grammar" ref="#Jean_Valreg">Il</rs> était timide,
+                     <lb/>mais plutôt réservé que gauche, et, voulant <rs type="person_grammar" ref="#Jean_Valreg">le</rs>
+                     <lb/>mettre à l’aise, <rs type="person_grammar" ref="#narrateur">j’</rs>y parvins très-vite en m’abste-
+                     <cb n="3"/>
+                     <lb/>nant de <rs type="person_grammar" ref="#Jean_Valreg">l’</rs>examiner, et en me bornant à <rs type="person_grammar" ref="#Jean_Valreg">le</rs> ques-rep
+                     <lb/>tionner.</p> 
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— <rs type="person_grammar" ref="#narrateur">Je</rs> me souviens de <rs type="person_grammar" ref="#Jean_Valreg">vous</rs> avoir vu souvent
+                     <lb/>quand <rs type="person_grammar" ref="#Jean_Valreg">vous</rs> étiez un enfant, <seg type="incise"><rs type="person_grammar" ref="#Jean_Valreg">lui</rs> dis-<rs type="person_grammar" ref="#narrateur">je</rs></seg> ; est-ce que
+                     <lb/><rs type="person_grammar" ref="#Jean_Valreg">vous</rs> vous souvenez de <rs type="person_grammar" ref="#narrateur">moi</rs> ?</said></p>
+                                 
+                  <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— C’est parce que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> m’en souviens très-bien,
+                     <lb/><seg type="incise">répondit-il</seg>, que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> me permets de venir <rs type="person_grammar" ref="#narrateur">vous</rs> voir.</said></p>
+                                 
+                  <p><lb/><said  who="#narrateur" toWhom="#Jean_Valreg" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Vous</rs> <rs type="person_grammar" ref="#narrateur">me</rs> faites plaisir : <rs type="person_grammar" ref="#narrateur">j’</rs>aimais beaucoup et
+                     <lb/><rs type="person_grammar" ref="#narrateur">j’</rs>estimais infiniment <rs type="person" ref="#Valreg_pere"><rs type="person_grammar" ref="#Jean_Valreg">votre</rs> père</rs>.</said></p>
+                                 
+                  <p><lb/><said  who="#Jean_Valreg" toWhom="#narrateur" direct="true">— <emph rend="italic"><rs type="person" ref="#Valreg_pere"><rs type="person_grammar" ref="#Jean_Valreg">Ton</rs> père</rs></emph> ! <seg type="incise">reprit-<rs type="person_grammar" ref="#Jean_Valreg">il</rs> avec un abandon qui <rs type="person_grammar" ref="#narrateur">me</rs>
+                     <lb/>gagna le cœur tout de suite</seg>. Autrefois, <rs type="person_grammar" ref="#narrateur">vous</rs> <rs type="person_grammar" ref="#Jean_Valreg">me</rs>
+                     <lb/>disiez tu, et <rs type="person_grammar" ref="#Jean_Valreg">je</rs> suis encore un enfant.</said></p>
+                                 
+               <p><lb/><said  who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Soit ! <rs type="person" ref="#Valreg_pere"><rs type="person_grammar" ref="#Jean_Valreg">ton</rs> pauvre père<rs type="person_grammar" ref="#Jean_Valreg"></rs> t’</rs>a quitté bien jeune !
+                     <lb/>Par qui as-<rs type="person_grammar" ref="#Jean_Valreg">tu</rs> été élevé depuis ?</said></p>
+                                 
+                  <p><lb/><said  who="#Jean_Valreg" toWhom="#narrateur" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> n’ai pas été élevé du tout. <rs type="people" ref="#deux_tantes">Deux tantes</rs> se
+                     <lb/>disputèrent <rs type="person" ref="#Juliette_Valreg"><rs type="person_grammar" ref="#Jean_Valreg">ma</rs> sœur</rs>…</said></p>
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Qui est mariée, sans doute ?</said></p>
+                                 
+                  <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Hélas, non ! <rs type="person_grammar" ref="#Juliette_Valreg">Elle</rs> est morte. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> suis seul au
+                     <lb/>monde depuis l’âge de douze ans, car c’est être seul
+                     <lb/>que d’être élevé par un prêtre.</said></p>
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Par un prêtre ? ah ! oui, <rs type="person_grammar" ref="#narrateur">je</rs> me souviens, <rs type="person" ref="#Valreg_pere"><rs type="person_grammar" ref="#Jean_Valreg">ton</rs>
+                     <lb/>père</rs> avait <rs type="person" ref="#oncle_pretre">un frère curé de campagne</rs> ; <rs type="person_grammar" ref="#narrateur">je</rs> <rs type="person_grammar" ref="#oncle_pretre">l’</rs>ai vu
+                     <lb/>deux ou trois fois : <rs type="person_grammar" ref="#oncle_pretre">il</rs> m’a paru être un excellent
+                     <lb/>homme. Ne <rs type="person_grammar" ref="#Jean_Valreg">t’</rs>a-t-<rs type="person_grammar" ref="#oncle_pretre">il</rs> pas élevé avec tendresse ?</said></p>
+                                 
+                  <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Physiquement, oui ; moralement, le mieux
+                     <lb/>qu’<rs type="person_grammar" ref="#oncle_pretre">il</rs> a pu, prêchant d’exemple ; mais, intellectuel-
+                     <lb/>lement, d’aucune façon. Absorbé par <rs type="person_grammar" ref="#oncle_pretre">ses</rs> devoirs
+                     <lb/>personnels ; ayant, sur toutes choses, et même
+                     <lb/>sur la religion et la charité, des tendances toutes
+                     <lb/>positives, comme on pouvait les attendre d’<rs type="person" ref="#oncle_pretre">un
+                     <lb/>homme qui avait quitté la charrue pour le sémi-
+                     <lb/>naire</rs>, <rs type="person_grammar" ref="#oncle_pretre">il</rs> <rs type="person_grammar" ref="#Jean_Valreg">m’</rs>a recommandé le travail sans <rs type="person_grammar" ref="#Jean_Valreg">me</rs> diri-
+                     <lb/>ger vers aucun travail, et <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai passé dix ans près
+                     <lb/>de <rs type="person_grammar" ref="#oncle_pretre">lui</rs> sans recevoir d’autre instruction que celle
+                     <lb/>des livres qu’il <rs type="person_grammar" ref="#Jean_Valreg">m’</rs>a plu de lire.</said></p>
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Avais-<rs type="person_grammar" ref="#Jean_Valreg">tu</rs> de bons livres, au moins ?</said></p>
+                                 
+                  <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Oui. <rs type="person" ref="#Valreg_pere"><rs type="person_grammar" ref="#Jean_Valreg">Mon</rs> père</rs> lui ayant confié par testa-
+                     <cb n="4"/>
+                     <lb/>ment <rs type="person_grammar" ref="#Valreg_pere">sa</rs> bibliothèque pour <rs type="person_grammar" ref="#Jean_Valreg">m’</rs>être transmise à <rs type="person_grammar" ref="#Jean_Valreg">ma</rs>
+                     <lb/>majorité, <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai pu lire quelques bons ouvrages, et,
+                     <lb/>bien que tous ne fussent pas orthodoxes, jamais
+                     <lb/><rs type="person" ref="#oncle_pretre">ce bon curé</rs> ne s’est avisé de se placer entre <rs type="person_grammar" ref="#Jean_Valreg">moi</rs>
+                     <lb/>et ce qu’<rs type="person_grammar" ref="#oncle_pretre">il</rs> considère comme <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> propriété.</said></p>
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Comment se fait-il qu’<rs type="person_grammar" ref="#oncle_pretre">il</rs> ne <rs type="person_grammar" ref="#Jean_Valreg">t’</rs>ait pas mis au
+                     <lb/>collége ?</said></p>
+                                 
+                  <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Élevé par <rs type="person" ref="#Valreg_pere">mon père</rs>, qui avait résolu de
+                     <lb/><rs type="person_grammar" ref="#Jean_Valreg">m’</rs>instruire <rs type="person" ref="#Valreg_pere">lui-même</rs> et qui <rs type="person_grammar" ref="#Jean_Valreg">m’</rs>avait donné les seu-
+                     <lb/>les notions d’études classiques que <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai reçues,
+                     <lb/><rs type="person_grammar" ref="#Jean_Valreg">j’</rs>éprouvais pour le collège une antipathie que
+                     <lb/><rs type="person" ref="#oncle_pretre">mon bon oncle</rs> ne voulut pas même essayer de
+                     <lb/>vaincre. <rs type="person_grammar" ref="#oncle_pretre">Il</rs> disait, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> m’en souviens, en <rs type="person_grammar" ref="#Jean_Valreg">me</rs> pre-
+                     <lb/>nant chez <rs type="person_grammar" ref="#oncle_pretre">lui</rs>, que <said who="#oncle_pretre" toWhom="#Jean_Valreg" direct="false">ce serait autant d’épargné sur
+                     <lb/><rs type="person_grammar" ref="#Jean_Valreg">mon</rs> petit avoir</said>, et que <said who="#oncle_pretre" toWhom="#Jean_Valreg" direct="false"><rs type="person_grammar" ref="#Jean_Valreg">je</rs> serais bien aise, <seg type="incise">c’é-
+                     <lb/>tait <rs type="person_grammar" ref="#oncle_pretre">son</rs> mot</seg>, de retrouver <rs type="person_grammar" ref="#Jean_Valreg">mon</rs> revenu capi-
+                     <lb/>talisé à <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> majorité</said>. <said who="#oncle_pretre" toWhom="undefined" direct="false">D’ailleurs, <seg type="incise">ajoutait-<rs type="person_grammar" ref="#oncle_pretre">il</rs></seg>,
+                     <lb/>puisque l’idée de <rs type="person" ref="#Valreg_pere">mon frère</rs> était de <rs type="person_grammar" ref="#Jean_Valreg">l’</rs>élever à
+                     <lb/>la maison, <rs type="person_grammar" ref="#oncle_pretre">je</rs> dois me conformer à <rs type="person_grammar" ref="#Valreg_pere">son</rs> désir, et
+                     <lb/><rs type="person_grammar" ref="#oncle_pretre">je</rs> sais bien assez de latin pour <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> enseigner ce
+                     <lb/>qu’il en faut savoir</said>. <rs type="person" ref="#oncle_pretre">Mon brave oncle</rs> avait cette
+                     <lb/>intention ; mais le temps <rs type="person_grammar" ref="#oncle_pretre">lui</rs> manqua toujours, et,
+                     <lb/>quand <rs type="person_grammar" ref="#oncle_pretre">il</rs> rentrait, fatigué de <rs type="person_grammar" ref="#oncle_pretre">ses</rs> courses, <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>avoue
+                     <lb/>que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> ne <rs type="person_grammar" ref="#oncle_pretre">le</rs> tourmentais pas pour <rs type="person_grammar" ref="#Jean_Valreg">me</rs> donner des
+                     <lb/>leçons. <rs type="person_grammar" ref="#oncle_pretre">Il</rs> s’assoupissait après souper dans <rs type="person_grammar" ref="#oncle_pretre">son</rs>
+                     <lb/>fauteuil, pendant que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> lisais, à l’autre bout de
+                     <lb/>la cheminée, <persName ref="#Platon">Platon</persName>, <persName ref="#Leibniz"><choice><sic>Leibnitz</sic><corr>Leibniz</corr></choice></persName> ou <persName ref="#Rousseau">Rousseau</persName> ; quel-
+                     <lb/>quefois <persName ref="#Scott">Walter Scott</persName> ou <persName ref="#Shakespeare"><choice><sic>Shakspeare</sic><corr>Shakespeare</corr></choice></persName>, ou encore
+                     <lb/><persName ref="#Byron">Byron</persName> ou <persName ref="#Goethe"><choice><sic>Goëthe</sic><corr>Goethe</corr></choice></persName>, sans qu’<rs type="person_grammar" ref="#oncle_pretre">il</rs> <rs type="person_grammar" ref="#Jean_Valreg">me</rs> demandât quel
+                     <lb/>livre <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>avais entre les mains. <rs type="person_grammar" ref="#Jean_Valreg">Me</rs> voyant tranquil-
+                     <lb/>le, recueilli, et studieux à <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> manière, heureux
+                     <lb/>et sans mauvaises passions, <rs type="person_grammar" ref="#oncle_pretre">il</rs> s’est imaginé que
+                     <lb/>cette absence de vices et de travers était <rs type="person_grammar" ref="#oncle_pretre">son</rs> ou-
+                     <lb/>vrage, et que n’être ni méchant, ni importun, ni
+                     <lb/>nuisible suffisait pour être agréable à Dieu et aux
+                     <lb/>hommes.</said></p>
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— De telle sorte, que <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> penses n’avoir aucune
+                     <cb n="5"/>
+                     <lb/>grande qualité, aucune grande faculté dévelop-
+                     <lb/>pée, faute d’une direction éclairée ou d’une sol-
+                     <lb/>licitude assidue ?</said></p>
+                                 
+                  <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Cela est certain, <seg type="incise">répondit le jeune garçon
+                     <lb/>avec une singulière tranquillité</seg>. Pourtant, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> se-
+                     <lb/>rais un misérable ingrat si <rs type="person_grammar" ref="#Jean_Valreg">je</rs> me plaignais de
+                     <lb/><rs type="person" ref="#oncle_pretre">mon oncle</rs>. <rs type="person_grammar" ref="#oncle_pretre">Il</rs> a fait pour <rs type="person_grammar" ref="#Jean_Valreg">moi</rs> tout ce qu’<rs type="person_grammar" ref="#oncle_pretre">il</rs> s’est
+                     <lb/>avisé de faire et ce qu’<rs type="person_grammar" ref="#oncle_pretre">il</rs> a jugé le meilleur.
+                     <lb/><rs type="person" ref="#servante_oncle"><rs type="person_grammar" ref="#oncle_pretre">Sa</rs> vieille servante</rs> a eu des soins si mater-
+                     <lb/>nels pour <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> santé, <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> propreté, <rs type="person_grammar" ref="#Jean_Valreg">mon</rs> bien-
+                     <lb/>être ; <rs type="person_grammar" ref="#servante_oncle">elle</rs> et <rs type="person_grammar" ref="#oncle_pretre">lui</rs> ont si bien assuré le char-
+                     <lb/>me de <rs type="person_grammar" ref="#Jean_Valreg">mes</rs> loisirs, en prévenant tous <rs type="person_grammar" ref="#Jean_Valreg">mes</rs>
+                     <lb/>besoins ; une telle habitude de silence, d’or-
+                     <lb/>dre et de douceur régnait autour de <rs type="person_grammar" ref="#Jean_Valreg">moi</rs> lors-
+                     <lb/>que <rs type="person_grammar" ref="#oncle_pretre"><rs type="person_grammar" ref="#Jean_Valreg">mon</rs> oncle</rs> s’absentait pour les soins de <rs type="person_grammar" ref="#oncle_pretre">son</rs>
+                     <lb/>ministère, qu’<rs type="person_grammar" ref="#oncle_pretre">il</rs> n’aurait pas eu de motifs pour
+                     <lb/>s’inquiéter de <rs type="person_grammar" ref="#Jean_Valreg">moi</rs>. Chaque jour, songeant au tri-
+                     <lb/>ple dépôt qui <rs type="person_grammar" ref="#oncle_pretre">lui</rs> était confié, <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> vie, <rs type="person_grammar" ref="#Jean_Valreg">mon</rs> âme et
+                     <lb/><rs type="person_grammar" ref="#Jean_Valreg">ma</rs> bourse, <rs type="person_grammar" ref="#oncle_pretre">il</rs> <rs type="person_grammar" ref="#Jean_Valreg">me</rs> faisait trois questions : <said who="#oncle_pretre" toWhom="#Jean_Valreg" direct="false"><rs type="person_grammar" ref="#Jean_Valreg">Tu</rs> n’es
+                     <lb/>pas malade ? <rs type="person_grammar" ref="#Jean_Valreg">Tu</rs> ne perds pas ton temps ? <rs type="person_grammar" ref="#Jean_Valreg">Tu</rs> n’as
+                     <lb/>pas besoin de quelque argent ?</said> Et, comme <rs type="person_grammar" ref="#Jean_Valreg">je</rs> ré-
+                     <lb/>pondais invariablement <emph rend="italic"><said who="#Jean_Valreg" toWhom="#oncle_pretre" direct="false">non</said></emph> à ces trois interroga-
+                     <lb/>tions, <rs type="person_grammar" ref="#oncle_pretre">il</rs> s’endormait tranquille.</said></p>
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Ainsi, <seg type="incise">repris-<rs type="person_grammar" ref="#narrateur">je</rs></seg>, <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> ne te plains de personne ;
+                     <lb/>mais, tout à l’heure, <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> avais sur les lèvres, com-
+                     <lb/>me par réticence, une sorte de plainte contre <rs type="person" ref="#Jean_Valreg">toi-
+                     <lb/>même</rs>.</said></p>
+                                 
+                  <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> ne suis ni content ni mécontent de ce que
+                     <lb/><rs type="person_grammar" ref="#Jean_Valreg">je</rs> suis. N’ayant été poussé dans aucune direct-
+                     <lb/>ion, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> ne peux pas valoir grand chose, et, si <rs type="person_grammar" ref="#Jean_Valreg">je</rs>
+                     <lb/>me suis permis de <rs type="person_grammar" ref="#narrateur">vous</rs> parler de <rs type="person_grammar" ref="#Jean_Valreg">moi</rs>, c’est qu’il
+                     <lb/>faut bien que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> m’excuse de la visite que <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai osé
+                     <lb/><rs type="person_grammar" ref="#narrateur">vous</rs> faire.</said></p>
+                                 
+                  <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Ta</rs> visite <rs type="person_grammar" ref="#narrateur">m’</rs>est agréable, ton nom <rs type="person_grammar" ref="#narrateur">m’</rs>est cher,
+                     <lb/>et <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> <rs type="person_grammar" ref="#narrateur">m’</rs>intéresses par <rs type="person" ref="#Jean_Valreg">toi-même</rs>, bien que je ne
+                     <lb/>pénètre pas encore beaucoup <rs type="person_grammar" ref="#Jean_Valreg">ton</rs> caractère et <rs type="person_grammar" ref="#Jean_Valreg">tes</rs>
+                     <lb/>idées.</said></p>
+                  
+            
+            
+               <pb n="2"/>                
+               <p><cb n="6"/>
+                  <lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— C’est qu’il n’y a rien à pénétrer du tout, <seg type="incise">dit
+                  <lb/><rs type="person" ref="#Jean_Valreg">le jeune homme</rs> avec un sourire plutôt enjoué
+                  <lb/>que mélancolique</seg>. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> suis un être tout à fait nul
+                  <lb/>et insignifiant, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> le sais, car, depuis quelque
+                  <lb/>temps, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> commençais à <rs type="person_grammar" ref="#Jean_Valreg">me</rs> lasser de <rs type="person_grammar" ref="#Jean_Valreg">mon</rs> bon-
+                  <lb/>heur et à reconnaître que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> n’y avais aucun
+                  <lb/>droit ; voilà pourquoi, dès que l’heure de <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> ma-
+                  <lb/>jorité a sonné, <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai demandé à <rs type="person_grammar" ref="#oncle_pretre"><rs type="person_grammar" ref="#Jean_Valreg">mon</rs> oncle</rs> la per-
+                  <lb/>mission d’aller voir <placeName ref="#Paris">Paris</placeName>, et, <rs type="person_grammar" ref="#oncle_pretre">lui</rs> faisant part de
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">mes</rs> projets, <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai obtenu <rs type="person_grammar" ref="#oncle_pretre">son</rs> assentiment.</said></p>
+                                 
+               <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Et quels sont <rs type="person_grammar" ref="#Jean_Valreg">tes</rs> projets ? Peut-on <rs type="person_grammar" ref="#Jean_Valreg">t’</rs>aider à
+                  <lb/>les réaliser ?</said></p>
+                                 
+               <p><lb/><said who="#Jean_Valreg" toWhom="narrateur" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> l’ignore. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> ne sais si l’on peut être utile
+                  <lb/>à ceux qui ne sont bons à rien ; et il est possible
+                  <lb/>que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> sois de ceux-là. Dans ce cas, <rs type="person_grammar" ref="#narrateur">vous</rs> pouvez
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">me</rs> renvoyer planter <rs type="person_grammar" ref="#Jean_Valreg">mes</rs> choux, puisque, par
+                  <lb/>malheur, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> possède assez de choux pour en vi-
+                  <lb/>vre.</said></p>
+                                 
+               <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Pourquoi par malheur ?</said></p>
+                                 
+               <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Parce que <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai hérité de la part de <rs type="person" ref="#Juliette_Valreg"><rs type="person_grammar" ref="#Jean_Valreg">ma</rs> pau-
+                  <lb/>vre petite sœur</rs>, et que <rs type="person_grammar" ref="#Jean_Valreg">me</rs> voilà, depuis quel-
+                  <lb/>ques jours de majorité, à la tête de vingt mille
+                  <lb/>francs.</said></p>
+                                 
+               <p><lb/>En parlant ainsi avec simplicité et résignation,
+                  <lb/><persName ref="#Jean_Valreg">Valreg</persName> se détourna, et <rs type="person_grammar" ref="#narrateur">je</rs> crus voir qu’<rs type="person_grammar" ref="#Jean_Valreg">il</rs> cachait
+                  <lb/>une grosse larme venue tout à coup au souvenir
+                  <lb/>de <rs type="person" ref="#Juliette_Valreg"><rs type="person_grammar" ref="#Jean_Valreg">sa</rs> jeune sœur</rs>.</p>
+                                 
+               <p><lb/><said  who="#narrateur" toWhom="#Jean_Valreg" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Tu</rs> <rs type="person_grammar" ref="#Juliette_Valreg">l’</rs>aimais beaucoup ? <seg type="incise"><rs type="person_grammar" ref="#Jean_Valreg">lui</rs> dis-<rs type="person_grammar" ref="#narrateur">je</rs></seg>.</said></p>
+                                 
+               <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Plus que tout au monde, <seg type="incise">répondit-<rs type="person_grammar" ref="#Jean_Valreg">il</rs></seg>. <rs type="person_grammar" ref="#Jean_Valreg">J’</rs>étais
+                  <lb/><rs type="person_grammar" ref="#Juliette_Valreg">son</rs> protecteur ; <rs type="person_grammar" ref="#Jean_Valreg">je</rs> me figurais être <rs type="person_grammar" ref="#Juliette_Valreg">son</rs> père, par-
+                  <lb/>ce que <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>avais quatre ans de plus qu’<rs type="person_grammar" ref="#Juliette_Valreg">elle</rs>. <rs type="person_grammar" ref="#Juliette_Valreg">Elle</rs>
+                  <lb/>était jolie, intelligente, et <rs type="person_grammar" ref="#Juliette_Valreg">elle</rs> <rs type="person_grammar" ref="#Jean_Valreg">m’</rs>adorait. <rs type="person_grammar" ref="#Juliette_Valreg">Elle</rs> de-
+                  <lb/>meurait à trois lieues du presbytère de <rs type="person" ref="#oncle_pretre"><rs type="person_grammar" ref="#Jean_Valreg">mon</rs> on-
+                  <lb/>cle</rs>, et, tous les dimanches, on <rs type="person_grammar" ref="#Jean_Valreg">me</rs> permettait
+                  <lb/>d’aller <rs type="person_grammar" ref="#Juliette_Valreg">la</rs> voir. Un jour, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> trouvai un cercueil sur
+                  <lb/>la porte de <rs type="person_grammar" ref="#Juliette_Valreg">sa</rs> maison. <rs type="person_grammar" ref="#Juliette_Valreg">Elle</rs> était morte sans que
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">j’</rs>eusse appris qu’<rs type="person_grammar" ref="#Juliette_Valreg">elle</rs> était malade. Dans nos
+                  <cb n="7"/>
+                  <lb/>campagnes sans chemins et sans mouvement,
+                  <lb/><rs type="person_grammar" ref="#narrateur">vous</rs> savez, trois lieues, c’est une distance. Cet
+                  <lb/>événement eut beaucoup d’influence sur <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> vie 
+                  <lb/>et sur <rs type="person_grammar" ref="#Jean_Valreg">mon</rs> caractère, déjà ébranlé par la mort
+                  <lb/>de <rs type="person" ref="#Valreg_pere"><rs type="person_grammar" ref="#Jean_Valreg">mon</rs> père</rs>. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> perdis toute gaîté. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> ne fus pas
+                  <lb/>consolé ou fortifié par une tendresse délicate
+                  <lb/>ou intelligente. <rs type="person_grammar" ref="#oncle_pretre"><rs type="person_grammar" ref="#Jean_Valreg">Mon</rs> oncle</rs> <rs type="person_grammar" ref="#Jean_Valreg">me</rs> disait qu’il était ridi-
+                  <lb/>cule de pleurer, <choice><sic>parce <rs type="person_grammar" ref="#oncle_pretre #Jean_Valreg">notre</rs></sic><corr>parce que <rs type="person_grammar" ref="#oncle_pretre #Jean_Valreg">notre</rs></corr></choice> <persName ref="#Juliette_Valreg">Juliette </persName>  était au ciel
+                  <lb/>et plus à envier qu’à plaindre. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> n’en doutais
+                  <lb/>pas ; mais cela ne <rs type="person_grammar" ref="#Jean_Valreg">m’</rs>enseignait pas le moyen de
+                  <lb/>vivre sans affection, sans intérêt et sans but.
+                  <lb/>Bref, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> restai longtemps taciturne et accablé, et
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai beau faire, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> me sens toujours mélancolique
+                  <lb/>et porté à l’indolence.</said></p>
+                                 
+               <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Cette indolence est-elle le résultat de <rs type="person_grammar" ref="#Jean_Valreg">tes</rs> ré-
+                  <lb/>flexions sur le néant de la vie, ou un état de lan-
+                  <lb/>gueur physique ? <rs type="person_grammar" ref="#narrateur">Je</rs> <rs type="person_grammar" ref="#Jean_Valreg">te</rs> trouve pâle, et <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> parais
+                  <lb/>plus âgé que <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> ne l’es. Es-<rs type="person_grammar" ref="#Jean_Valreg">tu</rs> d’une bonne santé ?</said></p>
+                                 
+               <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> n’ai jamais été malade, et <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>ai physique-
+                  <lb/>ment de l’activité. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> suis un marcheur infatigable ;
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">j’</rs>aimerais peut-être les voyages ; mais <rs type="person_grammar" ref="#Jean_Valreg">mon</rs> mal-
+                  <lb/>heur est de ne pas bien savoir ce que <rs type="person_grammar" ref="#Jean_Valreg">j’</rs>aime, car
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">je</rs> ne me connais point, et <rs type="person_grammar" ref="#Jean_Valreg">je</rs> suis paresseux à
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">m’</rs>interroger.</said></p>
+                                 
+               <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— <rs type="person_grammar" ref="#Jean_Valreg">Tu</rs> <rs type="person_grammar" ref="#narrateur">me</rs> parlais cependant de <rs type="person_grammar" ref="#Jean_Valreg">tes</rs> projets :
+                  <lb/>donc <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> n’as pas quitté <rs type="person_grammar" ref="#Jean_Valreg">ta</rs> province et <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> n’es pas
+                  <lb/>venu à <placeName ref="#Paris">Paris</placeName> sans avoir quelque désir ou quelque résolution
+                  <lb/>d’utiliser <rs type="person_grammar" ref="#Jean_Valreg">ta</rs> vie ?</said></p>
+                                 
+               <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— Utiliser <rs type="person_grammar" ref="#Jean_Valreg">ma</rs> vie ! <seg type="incise">dit <rs type="person" ref="#Jean_Valreg">le jeune homme</rs> après
+                  <lb/>un moment de silence</seg> ; oui, voilà bien le fond de
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">ma</rs> pensée. <rs type="person_grammar" ref="#Jean_Valreg">J’</rs>ai besoin que <rs type="person_grammar" ref="#narrateur">vous</rs> <rs type="person_grammar" ref="#Jean_Valreg">me</rs> disiez qu’un
+                  <lb/>homme n’a pas le droit de vivre pour lui seul.
+                  <lb/>C’est pour que <rs type="person_grammar" ref="#narrateur">vous</rs> <rs type="person_grammar" ref="#Jean_Valreg">me</rs> disiez cela que <rs type="person_grammar" ref="#Jean_Valreg">je</rs> suis
+                  <lb/>ici ; et, quand <rs type="person_grammar" ref="#narrateur">vous</rs> <rs type="person_grammar" ref="#Jean_Valreg">me</rs> l’aurez bien fait compren-
+                  <lb/>dre et sentir, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> chercherai à quoi <rs type="person_grammar" ref="#Jean_Valreg">je</rs> suis propre,
+                  <lb/>si toutefois <rs type="person_grammar" ref="#Jean_Valreg">je</rs> suis propre à quelque chose.</said></p>
+                                 
+               <p><lb/><said who="#narrateur" toWhom="#Jean_Valreg" direct="true">— Voilà ce qu’il ne faut jamais révoquer en
+                  <cb n="8"/>
+                  <lb/>doute. Si <rs type="person_grammar" ref="#Jean_Valreg">tu</rs> es bien pénétré de l’idée du devoir,
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">tu</rs> dois <rs type="person_grammar" ref="#Jean_Valreg">te</rs> dire qu’il n’y a d’incapables que ceux
+                  <lb/>qui veulent l’être.</said></p>
+                                 
+               <p><lb/><rs type="person_grammar" ref="#narrateur #Jean_Valreg">Nous</rs> causâmes ensemble une demi-heure, et
+                  <lb/><rs type="person_grammar" ref="#narrateur">je</rs> trouvai en <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> une grande docilité de cœur et
+                  <lb/>d’esprit. <rs type="person_grammar" ref="#narrateur">Je</rs> <rs type="person_grammar" ref="#Jean_Valreg">le</rs> regardais avec attention, et <rs type="person_grammar" ref="#narrateur">je</rs> re-
+                  <lb/>marquais la délicate et pénétrante beauté de <rs type="person_grammar" ref="#Jean_Valreg">sa</rs>
+                  <lb/>figure. Plutôt petit que grand, brun jusqu’à en être
+                  <lb/>jaune, un peu trop inculte de chevelure, et
+                  <lb/>déjà pourvu d’une moustache très noire, <rs type="person_grammar" ref="#Jean_Valreg">il</rs> offrait
+                  <lb/>au premier aspect quelque chose de sombre, de
+                  <lb/>négligé ou de maladif ; mais un doux sourire illu-
+                  <lb/>minait parfois cette figure bilieuse, et des éclairs
+                  <lb/>de vive sensibilité donnaient à <rs type="person_grammar" ref="#Jean_Valreg">ses</rs> yeux, un peu
+                  <lb/>petits et enfoncés, un rayonnement extraordinai-
+                  <lb/>re. Ce n’étaient là ni le sourire, ni le regard d’une
+                  <lb/>jeunesse avortée et infructueuse. Il y avait dans
+                  <lb/>la simplicité de <rs type="person_grammar" ref="#Jean_Valreg">son</rs> élocution, une netteté douce
+                  <lb/>et comme une habitude de distinction qui ne sen-
+                  <lb/>taient pas trop le village. Enfin, bien qu’en effet
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">il</rs> ne sût peut-être rien, <rs type="person_grammar" ref="#Jean_Valreg">il</rs> n’était étranger à rien,
+                  <lb/>et me paraissait apte et prompt à tout compren-
+                  <lb/>dre.</p>
+                                 
+               <p><lb/><said who="#Jean_Valreg" toWhom="#narrateur" direct="true">— <rs type="person_grammar" ref="#narrateur">Vous</rs> avez raison, <seg type="incise"><rs type="person_grammar" ref="#narrateur">me</rs> dit-<rs type="person_grammar" ref="#Jean_Valreg">il</rs> en me quittant</seg> ;
+                  <lb/>mieux vaudrait le suicide réel que le suicide de
+                  <lb/>l’âme par nonchalance et par poltronnerie. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs>
+                  <lb/>manque d’un grand désir de vivre, mais <rs type="person_grammar" ref="#Jean_Valreg">je</rs> ne
+                  <lb/>suis pourtant pas dégoûté maladivement de la
+                  <lb/>vie, et <rs type="person_grammar" ref="#Jean_Valreg">je</rs> sens que, ne voulant pas m’en débar-
+                  <lb/>rasser, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> dois l’utiliser selon <rs type="person_grammar" ref="#Jean_Valreg">mes</rs> forces. Le
+                  <lb/>scepticisme du siècle était venu <rs type="person_grammar" ref="#Jean_Valreg">me</rs> blesser jus-
+                  <lb/>qu’au fond de nos campagnes. <rs type="person_grammar" ref="#Jean_Valreg">Je</rs> m’étais dit,
+                  <lb/>qu’entre l’ambition des vanités de la vie et le
+                  <lb/>mépris de toute activité, il n’y avait peut-être
+                  <lb/>plus de milieu pour les enfans de ce temps-ci.
+                  <lb/><rs type="person_grammar" ref="#narrateur">Vous</rs> me dites qu’il y en a encore. Eh bien, <rs type="person_grammar" ref="#Jean_Valreg">je</rs>
+                  <lb/>chercherai, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> réfléchirai, et quand, avec cette
+                  <cb n="9"/>
+                  <lb/>espérance, <rs type="person_grammar" ref="#Jean_Valreg">je</rs> me serai de nouveau consulté, <rs type="person_grammar" ref="#Jean_Valreg">je</rs>
+                  <lb/>reviendrai vous voir.</said></p>
+                                 
+               <p><lb/>Il passa cependant six mois à <placeName ref="#Paris">Paris</placeName> sans pren-
+                  <lb/>dre aucun parti et sans vouloir <rs type="person_grammar" ref="#narrateur">me</rs> reparler de
+                  <lb/><rs type="person" ref="#Jean_Valreg">lui-même</rs>. <rs type="person_grammar" ref="#Jean_Valreg">Il</rs> venait souvent chez <rs type="people" ref="#famille_narrateur">nous</rs>, <rs type="person_grammar" ref="#Jean_Valreg">il</rs> était de
+                  <lb/><rs type="people" ref="#famille_narrateur">la famille</rs> ; <rs type="person_grammar" ref="#Jean_Valreg">il</rs> <rs type="people" ref="#famille_narrateur">nous</rs> aimait et <rs type="people" ref="#famille_narrateur">nous</rs> <rs type="person_grammar" ref="#Jean_Valreg">l’</rs>aimions,
+                  <lb/>car <rs type="people" ref="#famille_narrateur">nous</rs> avions promptement découvert en <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> des
+                  <lb/>qualités essentielles, une grande droiture, de la
+                  <lb/>discrétion et de la fierté, de la délicatesse dans
+                  <lb/>tous les sentiments et dans toutes les idées, enfin
+                  <lb/>quelque chose de calme, de sage et de pur, je
+                  <lb/>ne dirai pas au-dessus de <rs type="person_grammar" ref="#Jean_Valreg">son</rs> âge, car cet âge
+                  <lb/>devrait être, dans les conditions normales de la
+                  <lb/>vie, une sereine éclosion de ce que nous avons
+                  <lb/>de meilleur dans l’âme, mais au-dessus de ce que
+                  <lb/>l’on pouvait attendre d’<rs type="person" ref="#Jean_Valreg">un enfant livré de si bon-
+                  <lb/>ne heure à sa propre impulsion</rs>.</p>
+                                 
+               <p><lb/>Ce qui <rs type="person_grammar" ref="#narrateur">me</rs> frappait particulièrement chez <persName ref="#Jean_Valreg">Jean
+                  <lb/>Valreg</persName>, c’était une modestie sérieuse et réelle.
+                  <lb/>Cette première jeunesse est presque toujours pré-
+                  <lb/>somptueuse par instinct ou par réflexion. Elle a
+                  <lb/>des ambitions égoïstes ou généreuses qui lui font
+                  <lb/>illusion sur ses propres forces. Chez <rs type="person" ref="#Jean_Valreg">notre jeune
+                     <lb/>ami</rs>, <rs type="person_grammar" ref="#narrateur">je</rs> remarquais une défiance de <rs type="person" ref="#Jean_Valreg">lui-même</rs> qui
+                  <lb/>ne prenait pas sa source, comme <rs type="person_grammar" ref="#narrateur">je</rs> l’avais craint
+                  <lb/>d’abord, dans une apathie de tempérament, mais
+                  <lb/>bien dans une candeur de bon sens et de bon
+                  <lb/>goût.</p>
+                                 
+               <p><lb/><rs type="person_grammar" ref="#narrateur">Je</rs> ne pourrais pourtant pas dire que <rs type="person" ref="#Jean_Valreg">ce char-
+                  <lb/>mant garçon</rs> répondît parfaitement au désir que
+                  <lb/><rs type="person_grammar" ref="#narrateur">j’</rs>avais de <rs type="person_grammar" ref="#Jean_Valreg">le</rs> bien diriger. <rs type="person_grammar" ref="#Jean_Valreg">Il</rs> restait mélancolique
+                  <lb/>et indécis. Cette manière d’être donnait un grand
+                  <lb/>attrait à <rs type="person_grammar" ref="#Jean_Valreg">son</rs> commerce. <rs type="person_grammar" ref="#Jean_Valreg">Sa</rs> personnalité ne se
+                  <lb/>mettant jamais en travers de celle des autres, <rs type="person_grammar" ref="#Jean_Valreg">il</rs>
+                  <lb/>se laissait doucement entraîner, en apparence, à
+                  <lb/>leur gaieté ou à leur raison ; mais <rs type="person_grammar" ref="#narrateur">je</rs> voyais bien
+                  <lb/>qu’<rs type="person_grammar" ref="#Jean_Valreg">il</rs> gardait, par devers <rs type="person_grammar" ref="#Jean_Valreg">lui</rs>, une appréciation un
+                  <cb n="10"/>
+                  <lb/>peu triste et désillusionnée des hommes et des
+                  <lb/>choses, et <rs type="person_grammar" ref="#narrateur">je</rs> <rs type="person_grammar" ref="#Jean_Valreg">le</rs> trouvais trop jeune pour s’aban-
+                  <lb/>donner au désenchantement avant que l’expé-
+                  <lb/>rience <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> eût donné le droit de le faire. <rs type="person_grammar" ref="#narrateur">Je</rs> <rs type="person_grammar" ref="#Jean_Valreg">le</rs>
+                  <lb/>plaignais de n’être ni amoureux, ni enthousiaste,
+                  <lb/>ni ambitieux. Il <rs type="person_grammar" ref="#narrateur">me</rs> semblait qu’<rs type="person_grammar" ref="#Jean_Valreg">il</rs> avait trop de
+                  <lb/>jugement et pas assez d’émotion, et <rs type="person_grammar" ref="#narrateur">j’</rs>étais tenté
+                  <lb/>de <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> conseiller quelque folie, plutôt que de <rs type="person_grammar" ref="#Jean_Valreg">le</rs>
+                  <lb/>voir rester ainsi en dehors de toutes choses, et
+                  <lb/>comme qui dirait en dehors de <rs type="person" ref="#Jean_Valreg">lui-même</rs>.</p>
+                                 
+               <p><lb/>Enfin, <rs type="person_grammar" ref="#Jean_Valreg">il</rs> se décida à <rs type="person_grammar" ref="#narrateur">me</rs> reparler de <rs type="person_grammar" ref="#Jean_Valreg">son</rs> avenir ;
+                  <lb/>et, comme <rs type="person_grammar" ref="#Jean_Valreg">il</rs> était d’ordinaire très peu expansif
+                  <lb/>sur son propre compte, <rs type="person_grammar" ref="#narrateur">j’</rs>eus à refaire connais-
+                  <lb/>sance avec <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> dans une seconde explication di-
+                  <lb/>recte, bien que <rs type="person_grammar" ref="#narrateur">je</rs> <rs type="person_grammar" ref="#Jean_Valreg"> l’</rs>eusse vu très-souvent depuis
+                  <lb/>la première.</p>
+                                 
+               <p><lb/>Dans ce court espace de quelques mois, il s’é-
+                  <lb/>tait fait en <rs type="person_grammar" ref="#Jean_Valreg">lui</rs> certains changements extérieurs
+                  <lb/>qui semblaient révéler des modifications inté-
+                  <lb/>rieures plus importantes. <rs type="person_grammar" ref="#Jean_Valreg">Il</rs> s’était promptement
+                  <lb/>mis à l’unisson de la société parisienne par <rs type="person_grammar" ref="#Jean_Valreg">sa</rs>
+                  <lb/>toilette plus soignée et <rs type="person_grammar" ref="#Jean_Valreg">ses</rs> manières plus aisées.
+                  <lb/><rs type="person_grammar" ref="#Jean_Valreg">Il</rs> s’était habillé et coiffé comme tout le monde ;
+                  <lb/>et cela soit dit en passant, <rs type="person_grammar" ref="#Jean_Valreg">le</rs> rendait très joli
+                  <lb/>garçon, <rs type="person_grammar" ref="#Jean_Valreg">sa</rs> figure ayant déjà par elle-même un
+                  <lb/>charme remarquable. <rs type="person_grammar" ref="#Jean_Valreg">Il</rs> avait pris de l’usage et
+                  <lb/>de l’aisance. <rs type="person_grammar" ref="#Jean_Valreg">Son</rs> air et <rs type="person_grammar" ref="#Jean_Valreg">son</rs> langage annonçaient
+                  <lb/>une grande facilité à effacer les angles de <rs type="person_grammar" ref="#Jean_Valreg">son</rs> in-
+                  <lb/>dividualité au contact des choses extérieures. <rs type="person_grammar" ref="#narrateur">Je</rs>
+                  <lb/>m’attendais donc à <rs type="person_grammar" ref="#Jean_Valreg">le</rs> trouver un peu rattaché à
+                  <lb/>ces choses, et <rs type="person_grammar" ref="#narrateur">je</rs> fus étonné d’apprendre de <rs type="person_grammar" ref="#Jean_Valreg">lui</rs>
+                  <lb/>qu’<rs type="person_grammar" ref="#Jean_Valreg">il</rs> s’en était, au contraire, détaché davantage.</p>
+                  
+                  <p><persName ref="#George_Sand">GEORGE SAND</persName>.
+                     
+                  <hi rend="italic">(La suite à demain.)</hi></p>
+
+               </div2>
+         </div1>
+      </body>
+   </text>   
+</TEI>
