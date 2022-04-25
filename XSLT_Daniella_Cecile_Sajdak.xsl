@@ -269,7 +269,7 @@
             <xsl:value-of select="replace(base-uri(.), 'TEI_Daniella_Cecile_Sajdak.xml', '')"/>
         </xsl:variable>
         <xsl:variable name="path_liste_pers">
-            <xsl:value-of select="concat($witfile, 'html/pers_liste', '.html')"/>
+            <xsl:value-of select="concat($witfile, 'html/liste_pers', '.html')"/>
         </xsl:variable>
         <!-- Lorsqu'on rencontre un persName, on insère un lien vers la liste des personnages -->
         <xsl:element name="a">
@@ -287,7 +287,7 @@
             <xsl:value-of select="replace(base-uri(.), 'TEI_Daniella_Cecile_Sajdak.xml', '')"/>
         </xsl:variable>
         <xsl:variable name="path_liste_lieux">
-            <xsl:value-of select="concat($witfile, 'html/lieux_liste', '.html')"/>
+            <xsl:value-of select="concat($witfile, 'html/liste_lieux', '.html')"/>
         </xsl:variable>
         <!-- Lorsqu'on rencontre un placeName, on insère un lien vers la liste des lieux-->
         <xsl:element name="a">
