@@ -12,4 +12,4 @@ L'extrait retenu pour cette édition a été initialement publié dans l'éditio
 - ODD_Daniella_Cecile_Sajdak.xml : l'ODD associée.
 - HTML_Daniella_Cecile_Sajdak.html : une visualisation HTML de l'ODD.
 - XSLT_Daniella_Cecile_Sajdak.xsl : la feuille de transformation XSLT vers des sorties HTML.
-- Dossier "html" : contient les sorties HTML générées grâce à la feuille de transformation. Ces différentes pages sont fournies à titre d'illustration, mais, pour une meilleure consultation, il est conseillé de cloner le dépît et de les générer à nouveau en appliquant la feuille de transformation (afin de s'assurer que les liens entre pages tiennent compte des chemins du dépôt local).
+- Dossier "html" : contient les sorties HTML générées grâce à la feuille de transformation. Ces différentes pages sont fournies à titre d'illustration, mais, pour une meilleure consultation, il est conseillé de cloner le dépôt et de les générer à nouveau en appliquant la feuille de transformation (afin de s'assurer que les liens entre pages tiennent compte des chemins du dépôt local).
